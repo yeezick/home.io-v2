@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show 
-    render json: @user, include: [:apis, :todos]
+    render json: @user
   end
 
   # POST /users, example: 
@@ -78,6 +78,7 @@ class UsersController < ApplicationController
   # Authentication 
 
   # POST /users/login
+  # request requires strong params
   def login 
     user = User.find_by(email: user_login_params[:email])
 
@@ -85,6 +86,7 @@ class UsersController < ApplicationController
       token = create_token(user.id)
       render json: {
         user: user.attributes.except("password_digest"),
+        include: [:apis, :todos],
         token: token,
       }, status: :ok
     else 
@@ -93,8 +95,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/verify
+    # attach token to authorization tab
   def verify 
-    render json: @current_user.attributes.except("password_digest"), status: :ok
+    render {json: @current_user}, {include: [:apis, :todos]}, {status: :ok}
   end
 
   private
