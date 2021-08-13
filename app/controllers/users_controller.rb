@@ -84,11 +84,11 @@ class UsersController < ApplicationController
 
     if user && user.authenticate(user_login_params[:password])
       token = create_token(user.id)
-      render json: {
-        user: user.attributes.except("password_digest"),
+      render({
+        json: {user: user, token: token},
         include: [:apis, :todos],
-        token: token,
-      }, status: :ok
+        status: :ok
+      })
     else 
       render json: {error: "unauthorized"}, status: :unauthorized
     end
@@ -97,7 +97,7 @@ class UsersController < ApplicationController
   # GET /users/verify
     # attach token to authorization tab
   def verify 
-    render {json: @current_user}, {include: [:apis, :todos]}, {status: :ok}
+    render json: @current_user, include: [:apis, :todos], status: :ok
   end
 
   private

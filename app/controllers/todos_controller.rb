@@ -5,15 +5,16 @@ class TodosController < ApplicationController
     todos = Todo.where(user_id: params[:user_id]) #find only todos associated with that user
     render json: todos
   end
-
+  
   def show 
     render json: @todo, include: :user_id
   end
 
+    # POST /todos
   def create 
     todo = Todo.new(todo_params)
     if todo.save
-      render json: todo, stauts: :created 
+      render json: todo, status: :created 
     else 
       render json: todo.errors, status: :unprocessable_entity
     end
@@ -33,6 +34,7 @@ class TodosController < ApplicationController
   end
 
   private 
+  # :todo requires strong params
   def todo_params
     params.require(:todo).permit(:input, :user_id)
   end

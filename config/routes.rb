@@ -11,13 +11,19 @@ Rails.application.routes.draw do
   # resources :flavors, only: [:index]
   
   # routes to login & verify (creates a user || generates a JWT for an existing one)
-
+  
   # authentication for user
   post "/users/login", to: "users#login"
   get "/users/verify", to: "users#verify"
   put "/users/:id", to: "users#update"
+  resources :users, only: [:create]
   
-  resources :users, only: [:create, :show]
+  # routes for todo
+  get "/users/:user_id/todos", to: "todos#index"
+  post "/users/:user_id/todos", to: "todos#create"
+  put "/todos/:id", to: "todos#update"
+  delete "/todos/:id", to: "todos#destroy"
+
   
 
 
