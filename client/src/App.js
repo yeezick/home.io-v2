@@ -56,7 +56,7 @@ const handleLogout = () => {
       <Layout className="App">
         <Main />
       </Layout>
-    </div>
+    </div> 
   );
 } 
 
