@@ -51,7 +51,7 @@ const handleLogout = () => {
   history.push("/")
 }
 
-  return (
+  return ( 
     <div>
       <Layout className="App">
         <Main />
