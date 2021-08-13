@@ -58,6 +58,6 @@ const handleLogout = () => {
       </Layout>
     </div>
   );
-}
+} 
 
 export default App;
