@@ -2,7 +2,7 @@ import api from "./apiConfig";
 
 export const register = (userData) => {
   try {
-    const res = await api.post("/users", { user: userData });
+    const res = api.post("/users", { user: userData });
     const { token } = res.data;
     if (token) {
       localStorage.setItem("authToken", token);
