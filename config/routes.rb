@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   put "/todos/:id", to: "todos#update"
   delete "/todos/:id", to: "todos#destroy"
 
+  # routes for api 
+  get "/apis", to: "apis#index"
+  put "/apis/:id", to: "apis#update"
+
   
 
 
