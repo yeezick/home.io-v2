@@ -1,12 +1,25 @@
+import {Link} from "react-router-dom"
+// components
+import Landing from "../../screens/landing/Landing.jsx";
+import Settings from "../../screens/settings/Settings.jsx";
+import UserHome from "../../screens/userHome/UserHome.jsx";
 
-import "./Header.css"
+import "./Header.css";
 
-const Header = () => {
+const Header = ({user}) => {
   return (
     <div>
-      Headerrrr
+        <Link to="/">
+          Landing
+        </Link>
+        <Link to="/welcome">
+          userHome
+        </Link>
+        <Link to="/settings">
+          settings
+        </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
