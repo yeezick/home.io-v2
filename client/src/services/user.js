@@ -3,7 +3,6 @@ import api from "./apiConfig";
 export const register = async (userData) => {
   try {
     const res = await api.post("/users", { user: userData });
-    console.log("res:", res)
     const { token } = res.data;
     if (token) {
       localStorage.setItem("authToken", token);

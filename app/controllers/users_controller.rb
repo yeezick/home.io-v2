@@ -84,11 +84,17 @@ class UsersController < ApplicationController
 
     if user && user.authenticate(user_login_params[:password])
       token = create_token(user.id)
-      render({
-        json: {user: user, token: token},
-        include: [:apis, :todos],
-        status: :ok
-      })
+      render json: {
+        user: user.attributes.except("password_digest"),
+        token: token,
+        include: [:apis, :todos]
+      }, status: :ok
+
+      # render({
+      #   json: {user: user, token: token},
+      #   include: [:apis, :todos],
+      #   status: :ok
+      # })
     else 
       render json: {error: "unauthorized"}, status: :unauthorized
     end

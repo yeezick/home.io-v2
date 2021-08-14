@@ -27,6 +27,7 @@ const Login = ({setLoginForm, loginForm, handleLogin}) => {
         name="password" 
         value={loginForm.password}
         onChange={(e) => handleChange(e)} />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
