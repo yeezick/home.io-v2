@@ -1,8 +1,5 @@
 import {Link} from "react-router-dom"
 // components
-import Landing from "../../screens/landing/Landing.jsx";
-import Settings from "../../screens/settings/Settings.jsx";
-import UserHome from "../../screens/userHome/UserHome.jsx";
 
 import "./Header.css";
 
