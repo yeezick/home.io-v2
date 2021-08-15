@@ -1,3 +1,5 @@
+// ! this component has an example of a useEffect which rerenders when user state successfully loads 
+
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { updateApi } from "../../services/api";
@@ -16,10 +18,20 @@ const Settings = ({ user }) => {
     weather: false,
   });
 
+  useEffect(() => {
+    if(user) {
+      const { cat, crypto, fact, food, joke, news, quote, weather } =
+      user.apis[0];
+      
+      setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
+    }
+  }, [user]);
+  console.log(apiList);
+
   if (!user) {
     return <h1> loading</h1>;
   }
-  // todo: attempting to auto-check checkboxes if user already has them toggled. need to also add value attribute to jsx. 
+  // todo: attempting to auto-check checkboxes if user already has them toggled. need to also add value attribute to jsx.
 
   // const { cat, crypto, fact, food, joke, news, quote, weather } = user.apis[0];
   // setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
@@ -30,8 +42,8 @@ const Settings = ({ user }) => {
       [name]: checked,
     });
   };
-  console.log("apiList:", apiList);
-  console.log("userApiList", user.apis[0]);
+  // console.log("apiList:", apiList);
+  // console.log("userApiList", user.apis[0]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,6 +94,7 @@ const Settings = ({ user }) => {
           id="joke"
           name="joke"
           onChange={(e) => handleChange(e)}
+          checked={true}
         />
         <label htmlFor="joke">joke</label>
 
