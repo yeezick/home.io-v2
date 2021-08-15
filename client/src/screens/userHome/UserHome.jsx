@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import {useHistory} from "react-router-dom"
 // components
 import Cat from "../../components/cat/Cat.jsx";
 import Crypto from "../../components/crypto/Crypto.jsx";
@@ -12,14 +14,25 @@ import Weather from "../../components/weather/Weather.jsx";
 import "./UserHome.css";
 
 const UserHome = ({ user }) => {
+  // todo: have page refresh after user hits submit on settings screen so userHome screen can reflect settings update
+  const [refresh, setRefresh] = useState(false)
+  const history = useHistory();
+  useEffect(()=> {
+     if (user) {
+      window.location.reload()
+    }
+  }, [])
+
   if (!user) {
     return <h1> loading....</h1>;
   }
+
 
   let apiList = user.apis[0];
   return (
     <div>
       <h1>I should be the User's home!</h1>
+      <Todo user={user}/>
       {!apiList.cat ? null : <Cat />}
       {!apiList.crypto ? null : <Crypto />}
       {!apiList.fact ? null : <Fact />}
@@ -27,7 +40,6 @@ const UserHome = ({ user }) => {
       {!apiList.joke ? null : <Joke />}
       {!apiList.news ? null : <News />}
       {!apiList.quote ? null : <Quote />}
-      {!apiList.todo ? null : <Todo user={user}/>}
       {!apiList.weather ? null : <Weather />}
     </div>
   );

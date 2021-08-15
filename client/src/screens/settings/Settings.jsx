@@ -1,4 +1,4 @@
-// ! this component has an example of a useEffect which rerenders when user state successfully loads 
+// this component has an example of a useEffect which rerenders when user state successfully loads 
 
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -26,15 +26,11 @@ const Settings = ({ user }) => {
       setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
     }
   }, [user]);
-  console.log("user api list: ", apiList);
 
   if (!user) {
     return <h1> loading</h1>;
   }
-  // todo: attempting to auto-check checkboxes if user already has them toggled. need to also add value attribute to jsx.
 
-  // const { cat, crypto, fact, food, joke, news, quote, weather } = user.apis[0];
-  // setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
   const handleChange = (e) => {
     const { name, checked } = e.target;
     setApiList({
@@ -45,7 +41,6 @@ const Settings = ({ user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("user:", user);
     const { id } = user.apis[0];
     await updateApi(id, apiList);
     history.push(`/welcome`);
