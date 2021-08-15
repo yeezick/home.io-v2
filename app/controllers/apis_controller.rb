@@ -2,9 +2,12 @@ class ApisController < ApplicationController
   before_action :get_api, only: [:update]
 
   def index
-    api = Api.all
-    # (user_id: params[:user_id])
+    api = Api.where(user_id: params[:user_id])
     render json: api
+  end
+
+  def show
+    render json: @api
   end
 
   def update
