@@ -26,7 +26,6 @@ Rails.application.routes.draw do
 
   # routes for api 
   get "/apis", to: "apis#index"
-  get "/apis/:id", to: "apis#show"
   put "/apis/:id", to: "apis#update"
 
   

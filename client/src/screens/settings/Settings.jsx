@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { updateApi, userApiList } from "../../services/api";
+import { useHistory } from "react-router-dom";
+import { updateApi } from "../../services/api";
 import "./Settings.css";
 
 const Settings = ({ user }) => {
-  let params = useParams();
-  console.log("params:",params);
-
   const history = useHistory();
   const [apiList, setApiList] = useState({
     cat: false,
@@ -19,32 +16,22 @@ const Settings = ({ user }) => {
     weather: false,
   });
 
-  useEffect(() => {
-    const setUserList = async () => {
-      const id = localStorage.getItem("user_id")
-      history.push(`/settings/${id}`)
-      const userList = await userApiList(id)
-      console.log(userList)
-    }
-    setUserList()
-  },[])
-
   if (!user) {
     return <h1> loading</h1>;
   }
-  // todo: attempting to auto-check checkboxes if user already has them toggled. need to also add value attribute to jsx.
- 
+  // todo: attempting to auto-check checkboxes if user already has them toggled. need to also add value attribute to jsx. 
 
+  // const { cat, crypto, fact, food, joke, news, quote, weather } = user.apis[0];
+  // setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
   const handleChange = (e) => {
     const { name, checked } = e.target;
-    console.log(e)
     setApiList({
       ...apiList,
       [name]: checked,
     });
   };
-  // console.log("apiList:", apiList);
-  // console.log("userApiList", user.apis[0]);
+  console.log("apiList:", apiList);
+  console.log("userApiList", user.apis[0]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +50,6 @@ const Settings = ({ user }) => {
           id="cat"
           name="cat"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="cat">cat</label>
 
@@ -72,7 +58,6 @@ const Settings = ({ user }) => {
           id="crypto"
           name="crypto"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="crypto">crypto</label>
 
@@ -81,7 +66,6 @@ const Settings = ({ user }) => {
           id="fact"
           name="fact"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="fact">fact</label>
 
@@ -90,7 +74,6 @@ const Settings = ({ user }) => {
           id="food"
           name="food"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="food">food</label>
 
@@ -99,7 +82,6 @@ const Settings = ({ user }) => {
           id="joke"
           name="joke"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="joke">joke</label>
 
@@ -108,7 +90,6 @@ const Settings = ({ user }) => {
           id="news"
           name="news"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="news">news</label>
 
@@ -117,7 +98,6 @@ const Settings = ({ user }) => {
           id="quote"
           name="quote"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="quote">quote</label>
 
@@ -126,7 +106,6 @@ const Settings = ({ user }) => {
           id="weather"
           name="weather"
           onChange={(e) => handleChange(e)}
-          // checked
         />
         <label htmlFor="weather">weather</label>
 
