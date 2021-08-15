@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import {useHistory} from "react-router-dom"
+import { useEffect } from "react";
 // components
 import Cat from "../../components/cat/Cat.jsx";
 import Crypto from "../../components/crypto/Crypto.jsx";
@@ -15,8 +14,6 @@ import "./UserHome.css";
 
 const UserHome = ({ user }) => {
   // todo: have page refresh after user hits submit on settings screen so userHome screen can reflect settings update
-  const [refresh, setRefresh] = useState(false)
-  const history = useHistory();
   useEffect(()=> {
      if (user) {
       window.location.reload()

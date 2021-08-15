@@ -1,12 +1,12 @@
 import api from "./apiConfig"
 
 export const getUserTodos = async (userID) => {
-  const res = await api.get(`/users/${user_id}/todos`)
+  const res = await api.get(`/users/${userID}/todos`)
   return res.data
 }
 
 export const addTodo = async (newTodo, userID) => {
-  const res = await api.post(`/users/${user_id}/todos`, {todo: newTodo})
+  const res = await api.post(`/users/${userID}/todos`, {todo: newTodo})
   return res.data
 }
 
