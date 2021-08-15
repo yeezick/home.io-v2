@@ -26,7 +26,7 @@ const Settings = ({ user }) => {
       setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
     }
   }, [user]);
-  console.log(apiList);
+  console.log("user api list: ", apiList);
 
   if (!user) {
     return <h1> loading</h1>;
@@ -42,8 +42,6 @@ const Settings = ({ user }) => {
       [name]: checked,
     });
   };
-  // console.log("apiList:", apiList);
-  // console.log("userApiList", user.apis[0]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,6 +60,7 @@ const Settings = ({ user }) => {
           id="cat"
           name="cat"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.cat}
         />
         <label htmlFor="cat">cat</label>
 
@@ -70,6 +69,7 @@ const Settings = ({ user }) => {
           id="crypto"
           name="crypto"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.crypto}
         />
         <label htmlFor="crypto">crypto</label>
 
@@ -78,6 +78,7 @@ const Settings = ({ user }) => {
           id="fact"
           name="fact"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.fact}
         />
         <label htmlFor="fact">fact</label>
 
@@ -86,6 +87,8 @@ const Settings = ({ user }) => {
           id="food"
           name="food"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.food}
+
         />
         <label htmlFor="food">food</label>
 
@@ -94,7 +97,8 @@ const Settings = ({ user }) => {
           id="joke"
           name="joke"
           onChange={(e) => handleChange(e)}
-          checked={true}
+          checked={!!apiList.joke}
+
         />
         <label htmlFor="joke">joke</label>
 
@@ -103,6 +107,8 @@ const Settings = ({ user }) => {
           id="news"
           name="news"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.news}
+
         />
         <label htmlFor="news">news</label>
 
@@ -111,6 +117,8 @@ const Settings = ({ user }) => {
           id="quote"
           name="quote"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.quote}
+
         />
         <label htmlFor="quote">quote</label>
 
@@ -119,6 +127,8 @@ const Settings = ({ user }) => {
           id="weather"
           name="weather"
           onChange={(e) => handleChange(e)}
+          checked={!!apiList.weather}
+
         />
         <label htmlFor="weather">weather</label>
 

@@ -17,7 +17,6 @@ const UserHome = ({ user }) => {
   }
 
   let apiList = user.apis[0];
-  console.log("i am user apiList:" ,user.apis[0])
   return (
     <div>
       <h1>I should be the User's home!</h1>
@@ -28,7 +27,7 @@ const UserHome = ({ user }) => {
       {!apiList.joke ? null : <Joke />}
       {!apiList.news ? null : <News />}
       {!apiList.quote ? null : <Quote />}
-      {!apiList.todo ? null : <Todo />}
+      {!apiList.todo ? null : <Todo user={user}/>}
       {!apiList.weather ? null : <Weather />}
     </div>
   );
