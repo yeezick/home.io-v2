@@ -36,13 +36,15 @@ export const getCosmic = async () => {
   }
 }
 
-// export const getFood = async () => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// }
+// todo: hide api key
+export const getFood = async () => {
+  try {
+    const response = await axios.get("https://api.spoonacular.com/recipes/random?apiKey=9262166b66784697a6bdd37ebf013b43")
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // export const getJoke = async () => {
 //   try {

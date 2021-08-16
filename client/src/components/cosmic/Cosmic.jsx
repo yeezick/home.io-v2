@@ -10,7 +10,6 @@ const Cosmic = () => {
   useEffect(() => {
   const fetchCosmic = async () => {
     const response = await getCosmic();
-    console.log(response)
     setCosmicData(response)
   }
   fetchCosmic()
@@ -20,7 +19,7 @@ const Cosmic = () => {
     <div>
       <h3>Cosmic</h3>
       <p> Title: {cosmicData.title}</p>
-      <img className="nasa-picture" src={cosmicData.url} alt="nasa's picture of the day"/>
+      <img className="nasa-picture" src={cosmicData.url} alt="nasa daily astronomy"/>
       <p>Text: {cosmicData.explanation}</p>
       <p>Copyright: {cosmicData.copyright}</p>
 

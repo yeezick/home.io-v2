@@ -13,7 +13,7 @@ const Todo = ({ user }) => {
   if (!user) {
     return <p> loading</p>;
   }
-  console.log(user)
+
   const handleChange = (e) => {
     const {value} = e.target
     setTodoForm({
@@ -26,7 +26,6 @@ const Todo = ({ user }) => {
     e.preventDefault()
     await addTodo(todoForm, user.id)
   }
-
 
   return (
     <div>

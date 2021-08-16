@@ -19,7 +19,6 @@ const TodoItem = ({ item, toggleRender, setToggleRender }) => {
   const [editState, setEditState] = useState(false);
 
   useEffect(() => {
-    console.log(editState);
     if (item) {
       setUpdateTodoForm({
         input: item.input,

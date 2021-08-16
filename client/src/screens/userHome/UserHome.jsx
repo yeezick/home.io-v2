@@ -23,7 +23,6 @@ const UserHome = ({ user }) => {
   if (!user) {
     return <h1> loading....</h1>;
   }
-  console.log(user)
 
 
   let apiList = user.apis[0];
