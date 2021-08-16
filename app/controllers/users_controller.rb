@@ -89,12 +89,6 @@ class UsersController < ApplicationController
         token: token,
         include: [:apis, :todos]
       }, status: :ok
-
-      # render({
-      #   json: {user: user, token: token},
-      #   include: [:apis, :todos],
-      #   status: :ok
-      # })
     else 
       render json: {error: "unauthorized"}, status: :unauthorized
     end
