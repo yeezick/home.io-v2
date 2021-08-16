@@ -13,7 +13,7 @@ const Todo = ({ user }) => {
   if (!user) {
     return <p> loading</p>;
   }
-  
+  console.log(user)
   const handleChange = (e) => {
     const {value} = e.target
     setTodoForm({
@@ -33,7 +33,7 @@ const Todo = ({ user }) => {
     <div>
       <h3>On your agenda:</h3>
       {user.todos.map((item, id) => (
-        <TodoItem item={item} id={id}/>
+        <TodoItem item={item} key={id}/>
       ))}
       <form onSubmit={handleSubmit}>
         <input
