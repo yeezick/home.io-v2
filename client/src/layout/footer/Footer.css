@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2rem;
+}
+.footer-title {
+  margin: 1rem 0;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  /* text-decoration: underline; */
+  /* background-color: #fff8e7; */
+  border: 1px  solid #fff8e7;
+  border-radius: 2px;
+  color: #fff8e7;
+}
+.network-link-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.network-link, .support-link {
+  color: #fff8e7;
+  text-decoration: none;
+}
+.support-link {
+  display: block;
+}
