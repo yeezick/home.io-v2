@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // components
 import Cat from "../../components/cat/Cat.jsx";
 import Crypto from "../../components/crypto/Crypto.jsx";
@@ -14,12 +14,11 @@ import "./UserHome.css";
 
 const UserHome = ({ user }) => {
   // todo: have page refresh after user hits submit on settings screen so userHome screen can reflect settings update
-  const [toggleRender, setToggleRender] = useState(true)
-
-//   useEffect(()=> {
-
-//  setToggleRender(!toggleRender)
-//   }, [])
+  useEffect(()=> {
+     if (user) {
+      window.location.reload()
+    }
+  }, [])
 
   if (!user) {
     return <h1> loading....</h1>;

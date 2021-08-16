@@ -6,7 +6,6 @@ import { updateApi } from "../../services/api";
 import "./Settings.css";
 
 const Settings = ({ user }) => {
-  
   const history = useHistory();
   const [apiList, setApiList] = useState({
     cat: false,
@@ -44,7 +43,7 @@ const Settings = ({ user }) => {
     e.preventDefault();
     const { id } = user.apis[0];
     await updateApi(id, apiList);
-    await history.push(`/welcome`);
+    history.push(`/welcome`);
   };
 
   return (
@@ -127,7 +126,7 @@ const Settings = ({ user }) => {
 
         />
         <label htmlFor="weather">weather</label>
-        
+
         <button type="submit">Submit</button>
       </form>
     </div>
