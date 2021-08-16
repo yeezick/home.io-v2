@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { updateApi } from "../../services/api";
 import "./Settings.css";
 
-const Settings = ({ user }) => {
+const Settings = ({ user, setUser }) => {
   const history = useHistory();
   const [apiList, setApiList] = useState({
     cat: false,
@@ -17,9 +17,11 @@ const Settings = ({ user }) => {
     quote: false,
     weather: false,
   });
+  // const [weatherLocation, setWeatherLocation]
 
   useEffect(() => {
     if(user) {
+      console.log(user)
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
       user.apis[0];
       
@@ -42,7 +44,14 @@ const Settings = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { id } = user.apis[0];
-    await updateApi(id, apiList);
+    const userApiList = await updateApi(id, apiList);
+    console.log("user:",userApiList)
+    setUser(prevUser => {
+      return {
+        ...prevUser, 
+        apis: [userApiList]
+      }
+    })
     history.push(`/welcome`);
   };
 

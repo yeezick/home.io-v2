@@ -56,7 +56,7 @@ function App() {
   return (
     <div>
       <Layout user={user} handleLogout={handleLogout}>
-        <Main user={user} />
+        <Main user={user} setUser={setUser} />
         <Route path="/login">
           <Login
             handleLogin={handleLogin}

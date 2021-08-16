@@ -74,9 +74,11 @@ export const getQuote = async () => {
   }
 }
 
+
+// weather calls needs to be made on front end due to weather app location necessity
 // export const getWeather = async () => {
 //   try {
-    
+//     const response = await axios.get()
 //   } catch (error) {
     
 //   }

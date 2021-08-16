@@ -9,7 +9,7 @@ import "./TodoItem.css";
 // make todo item editable
 // item shoould turn into input box on click of "penci icon"(button for now)
 
-const TodoItem = ({ item, toggleRender, setToggleRender }) => {
+const TodoItem = ({ item, user, setUser }) => {
   // console.log("item:", item);
   const [updateTodoForm, setUpdateTodoForm] = useState({
     input: "",
@@ -25,45 +25,59 @@ const TodoItem = ({ item, toggleRender, setToggleRender }) => {
         user_id: item.user_id,
       });
     }
-  }, [editState, toggleRender, item]);
+  }, [editState, item]);
 
   const handleDelete = async () => {
-    await deleteTodo(item.id);
-    await setToggleRender(!toggleRender)
+    const deletedItem = await deleteTodo(item.id);
+    // console.log(deletedItem)
+    if (deletedItem === "DELETED") {
+      setUser((prevState) => {
+        return {
+          ...prevState,
+          todos: user.todos.filter((todo) => todo.id !== item.id)
+        }
+      })
+    }
+      
   };
 
   const handleEdit = async (e) => {
     const { value } = e.target;
     setUpdateTodoForm({
       input: value,
-      user_id: item.user_id
-    })
+      user_id: item.user_id,
+    });
   };
-  
-  const handleUpdate = async () => {
-    await updateTodo(item.id, updateTodoForm)
-    setEditState(!editState)
-  }
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    const todoItem = await updateTodo(item.id, updateTodoForm);
+    setUser((prevState) => {
+      return {
+        ...prevState,
+        todos: user.todos.map((todo)=> todo.id === item.id ? todoItem : todo)
+      }
+    })
+    setEditState(!editState);
+  };
 
   return (
     <div>
       <button onClick={handleDelete}>delete</button>
-      <form>
-        {!editState ? (
-          <p onClick={() => setEditState(!editState)}>{item.input}</p>
-        ) : (
-          <div>
-            <input
-              type="text"
-              value={updateTodoForm.input}
-              onChange={(e) => {
-                handleEdit(e);
-              }}
-            />
-            <button onClick={handleUpdate}>Update</button>
-          </div>
-        )}
-      </form>
+      {!editState ? (
+        <p onClick={() => setEditState(!editState)}>{item.input}</p>
+      ) : (
+        <form onSubmit={(e) => handleUpdate(e)}>
+          <input
+            type="text"
+            value={updateTodoForm.input}
+            onChange={(e) => {
+              handleEdit(e);
+            }}
+          />
+          <button>Update</button>
+        </form>
+      )}
     </div>
   );
 };

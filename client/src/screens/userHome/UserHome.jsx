@@ -12,7 +12,7 @@ import Weather from "../../components/weather/Weather.jsx";
 
 import "./UserHome.css";
 
-const UserHome = ({ user }) => {
+const UserHome = ({ user, setUser }) => {
   // todo: have page refresh after user hits submit on settings screen so userHome screen can reflect settings update
   // useEffect(()=> {
   //    if (user) {
@@ -29,7 +29,7 @@ const UserHome = ({ user }) => {
   return (
     <div>
       <h1>I should be the User's home!</h1>
-      <Todo user={user}/>
+      <Todo user={user} setUser={setUser}/>
       {!apiList.cat ? null : <Cat />}
       {!apiList.crypto ? null : <Crypto />}
       {!apiList.cosmic ? null : <Cosmic />}
