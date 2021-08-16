@@ -1,10 +1,25 @@
-
+import { useState, useEffect } from "react"
+import { getQuote } from "../../services/data"
 import "./Quote.css"
 
 const Quote = () => {
+
+  const [quote, setQuote] = useState({})
+
+  useEffect(()=> {
+    const fetchQuote = async () => {
+      const response = await getQuote()
+      setQuote(response)
+      console.log(response)
+    }
+    fetchQuote()
+  },[])
+
   return (
     <div>
-      I'm a quote.
+      <h3> Quote</h3>
+      <p>{quote.quote}</p>
+      <p>{quote.author}</p>
     </div>
   )
 }
