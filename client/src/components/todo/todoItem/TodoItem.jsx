@@ -26,7 +26,7 @@ const TodoItem = ({ item, toggleRender, setToggleRender }) => {
         user_id: item.user_id,
       });
     }
-  }, [editState, toggleRender]);
+  }, [editState, toggleRender, item]);
 
   const handleDelete = async () => {
     await deleteTodo(item.id);

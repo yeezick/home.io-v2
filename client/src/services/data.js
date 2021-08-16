@@ -7,22 +7,24 @@ import axios from "axios"
 //   },
 // };
 
-export const getCat = async () => {
+export const getCatPic = async () => {
   try {
     const response = await axios.get("https://api.thecatapi.com/v1/images/search")
-    console.log(response)
+    const imgUrl = response.data[0].url;
+    return imgUrl
   } catch (error) {
     console.log(error)
   }
 }
 
-// export const getCrypto = async () => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// }
+export const getCrypto = async () => {
+  try {
+    const response = await axios.get("https://api.coincap.io/v2/assets")
+    console.log(response)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // export const getFact = async () => {
 //   try {

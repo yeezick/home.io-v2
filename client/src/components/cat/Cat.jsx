@@ -1,20 +1,22 @@
-import { useEffect } from "react"
-import { getCat } from "../../services/data"
+import { useEffect, useState } from "react"
+import { getCatPic } from "../../services/data"
 import "./Cat.css"
 
 const Cat = () => {
 
+  const [catPic, setCatPic] = useState("")
+
   useEffect(() => {
     const fetchCat = async () => {
-      const response = getCat();
-      console.log(response)
+      const imgUrl = await getCatPic();
+       setCatPic(imgUrl)
     }
     fetchCat()
   },[])
 
   return (
     <div>
-      I'm a cat
+      <img className="cat-pic" src={catPic} alt="random cat"/>
     </div>
   )
 }

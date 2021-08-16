@@ -14,11 +14,11 @@ import "./UserHome.css";
 
 const UserHome = ({ user }) => {
   // todo: have page refresh after user hits submit on settings screen so userHome screen can reflect settings update
-  useEffect(()=> {
-     if (user) {
-      window.location.reload()
-    }
-  }, [])
+  // useEffect(()=> {
+  //    if (user) {
+  //     window.location.reload()
+  //   }
+  // }, [])
 
   if (!user) {
     return <h1> loading....</h1>;

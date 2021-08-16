@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addTodo, updateTodo, deleteTodo } from "../../services/todos";
+import { addTodo } from "../../services/todos";
 
 import TodoItem from "./todoItem/TodoItem"
 import "./Todo.css";
@@ -24,7 +24,6 @@ const Todo = ({ user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { id } = user
     await addTodo(todoForm, user.id)
   }
 
