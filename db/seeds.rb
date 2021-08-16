@@ -10,7 +10,7 @@
 # create! raises an exception if theres an error creating a new instance
 
 # users 
-erick = User.create!(name: "Erick Manrique", username: "erck", password_digest: "erick1", email: "erick@manrique.com")
+erick = User.create!(name: "Erick Manrique", username: "erck", password: "erick1", email: "erick@manrique.com")
 
 # t-do
 delete = Todo.create!(input: "Click me to delete", user: erick)
