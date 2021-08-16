@@ -19,8 +19,8 @@ export const getCatPic = async () => {
 
 export const getCrypto = async () => {
   try {
-    const response = await axios.get("https://api.coincap.io/v2/assets")
-    console.log(response)
+    const response = await axios.get("http://cors-lite.herokuapp.com/https://api.coincap.io/v2/assets?limit=10") 
+    return response.data
   } catch (error) {
     console.log(error)
   }
