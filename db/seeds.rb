@@ -17,7 +17,7 @@ delete = Todo.create!(input: "Click me to delete", user: erick)
 edit = Todo.create!(input:"Click the pencil to edit this task", user: erick)
 
 # api
-default_api = Api.create!(news: true, weather: true, joke: true, quote: true, cat: true, fact: true, crypto: true, food:true, user: erick)
+default_api = Api.create!(news: true, weather: true, joke: true, quote: true, cat: true, cosmic: true, crypto: true, food:true, user: erick)
 
 # setting
 # POST MVP 
