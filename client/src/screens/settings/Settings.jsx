@@ -10,7 +10,7 @@ const Settings = ({ user }) => {
   const [apiList, setApiList] = useState({
     cat: false,
     crypto: false,
-    fact: false,
+    cosmic: false,
     food: false,
     joke: false,
     news: false,
@@ -20,10 +20,10 @@ const Settings = ({ user }) => {
 
   useEffect(() => {
     if(user) {
-      const { cat, crypto, fact, food, joke, news, quote, weather } =
+      const { cat, crypto, cosmic, food, joke, news, quote, weather } =
       user.apis[0];
       
-      setApiList({ cat, crypto, fact, food, joke, news, quote, weather });
+      setApiList({ cat, crypto, cosmic, food, joke, news, quote, weather });
     }
   }, [user]);
 
@@ -70,12 +70,12 @@ const Settings = ({ user }) => {
 
         <input
           type="checkbox"
-          id="fact"
-          name="fact"
+          id="cosmic"
+          name="cosmic"
           onChange={(e) => handleChange(e)}
-          checked={!!apiList.fact}
+          checked={!!apiList.cosmic}
         />
-        <label htmlFor="fact">fact</label>
+        <label htmlFor="cosmic">cosmic</label>
 
         <input
           type="checkbox"

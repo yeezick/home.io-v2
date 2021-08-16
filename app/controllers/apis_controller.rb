@@ -23,7 +23,7 @@ class ApisController < ApplicationController
 
   private
   def api_params
-    params.require(:api).permit(:news, :weather, :joke, :quote, :cat, :fact, :crypto, :food,:user_id)
+    params.require(:api).permit(:news, :weather, :joke, :quote, :cat, :cosmic, :crypto, :food,:user_id)
   end
 
   def get_api

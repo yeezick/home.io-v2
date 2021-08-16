@@ -26,13 +26,15 @@ export const getCrypto = async () => {
   }
 }
 
-// export const getFact = async () => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// }
+// todo: hide api key
+export const getCosmic = async () => {
+  try {
+    const response = await axios.get("https://api.nasa.gov/planetary/apod?api_key=3ZflFQUbUgnxtomWnbN6ROEMWjeMA89vRGtW9Vdv")
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // export const getFood = async () => {
 //   try {

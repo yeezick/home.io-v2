@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_12_191640) do
+ActiveRecord::Schema.define(version: 2021_08_16_144123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_191640) do
     t.boolean "joke"
     t.boolean "quote"
     t.boolean "cat"
-    t.boolean "fact"
+    t.boolean "cosmic"
     t.boolean "crypto"
     t.boolean "food"
     t.bigint "user_id", null: false

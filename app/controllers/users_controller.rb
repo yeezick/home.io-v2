@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       Todo.create!([{input: "Click me to delete", user: user}, {input:"Click the pencil to edit this task", user: user}])
 
       # create api list
-      Api.create!(news: false, weather: false, joke: false, quote: false, cat: false, fact: false, crypto: false, food:false, user: user)
+      Api.create!(news: false, weather: false, joke: false, quote: false, cat: false, cosmic: false, crypto: false, food:false, user: user)
 
       render json: {
         user: user.attributes.except("password_digest"),

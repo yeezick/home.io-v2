@@ -2,7 +2,7 @@ import { useEffect } from "react";
 // components
 import Cat from "../../components/cat/Cat.jsx";
 import Crypto from "../../components/crypto/Crypto.jsx";
-import Fact from "../../components/fact/Fact.jsx";
+import Cosmic from "../../components/cosmic/Cosmic.jsx";
 import Food from "../../components/food/Food.jsx";
 import Joke from "../../components/joke/Joke.jsx";
 import News from "../../components/news/News.jsx";
@@ -23,6 +23,7 @@ const UserHome = ({ user }) => {
   if (!user) {
     return <h1> loading....</h1>;
   }
+  console.log(user)
 
 
   let apiList = user.apis[0];
@@ -32,7 +33,7 @@ const UserHome = ({ user }) => {
       <Todo user={user}/>
       {!apiList.cat ? null : <Cat />}
       {!apiList.crypto ? null : <Crypto />}
-      {!apiList.fact ? null : <Fact />}
+      {!apiList.cosmic ? null : <Cosmic />}
       {!apiList.food ? null : <Food />}
       {!apiList.joke ? null : <Joke />}
       {!apiList.news ? null : <News />}
