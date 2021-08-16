@@ -1,0 +1,11 @@
+.navbar {
+  background-color: #16263E;
+  color: #FFF8E7;
+  display: flex;
+}
+
+.navbar-left{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}

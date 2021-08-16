@@ -1,4 +1,4 @@
-// this component has an example of a useEffect which rerenders when user state successfully loads 
+// this component has an example of a useEffect which rerenders when user state successfully loads
 
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -20,11 +20,11 @@ const Settings = ({ user, setUser }) => {
   // const [weatherLocation, setWeatherLocation]
 
   useEffect(() => {
-    if(user) {
-      console.log(user)
+    if (user) {
+      console.log(user);
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
-      user.apis[0];
-      
+        user.apis[0];
+
       setApiList({ cat, crypto, cosmic, food, joke, news, quote, weather });
     }
   }, [user]);
@@ -45,15 +45,36 @@ const Settings = ({ user, setUser }) => {
     e.preventDefault();
     const { id } = user.apis[0];
     const userApiList = await updateApi(id, apiList);
-    console.log("user:",userApiList)
-    setUser(prevUser => {
+    console.log("user:", userApiList);
+    setUser((prevUser) => {
       return {
-        ...prevUser, 
-        apis: [userApiList]
-      }
-    })
+        ...prevUser,
+        apis: [userApiList],
+      };
+    });
     history.push(`/welcome`);
   };
+
+
+  // todo: the following code is meant for implementation of weather component. At this moment,the weather component is on hold because of time constraints. please return to this. 
+  // const [lat, setLat] = useState(null);
+  // const [lng, setLng] = useState(null);
+  // const [status, setStatus] = useState(null);
+  // const getLocation = () => {
+  //   if (!navigator.geolocation) {
+  //     setStatus('Geolocation is not supported by your browser');
+  //   } else {
+  //     setStatus('Locating...');
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       setStatus(null);
+  //       setLat(position.coords.latitude);
+  //       setLng(position.coords.longitude);
+  //     }, () => {
+  //       setStatus('Unable to retrieve your location');
+  //     });
+  //   }
+  // }
+  
 
   return (
     <div>
@@ -92,7 +113,6 @@ const Settings = ({ user, setUser }) => {
           name="food"
           onChange={(e) => handleChange(e)}
           checked={!!apiList.food}
-
         />
         <label htmlFor="food">food</label>
 
@@ -102,7 +122,6 @@ const Settings = ({ user, setUser }) => {
           name="joke"
           onChange={(e) => handleChange(e)}
           checked={!!apiList.joke}
-
         />
         <label htmlFor="joke">joke</label>
 
@@ -112,7 +131,6 @@ const Settings = ({ user, setUser }) => {
           name="news"
           onChange={(e) => handleChange(e)}
           checked={!!apiList.news}
-
         />
         <label htmlFor="news">news</label>
 
@@ -122,7 +140,6 @@ const Settings = ({ user, setUser }) => {
           name="quote"
           onChange={(e) => handleChange(e)}
           checked={!!apiList.quote}
-
         />
         <label htmlFor="quote">quote</label>
 
@@ -132,10 +149,9 @@ const Settings = ({ user, setUser }) => {
           name="weather"
           onChange={(e) => handleChange(e)}
           checked={!!apiList.weather}
-
         />
         <label htmlFor="weather">weather</label>
-
+        <p>If you have chosen to use the weather api, the browser will prompt to use your location, please allow to receive weather data.</p>
         <button type="submit">Submit</button>
       </form>
     </div>
