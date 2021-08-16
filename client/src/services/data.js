@@ -55,13 +55,15 @@ export const getJoke = async () => {
   }
 }
 
-// export const getNews = async () => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// }
+// todo: hide apiKey
+export const getNews = async () => {
+  try {
+    const response = await axios.get("http://api.mediastack.com/v1/news?access_key=6093edc68c7322dfa2913f7433667f4d&languages=en")
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // export const getQuote = async () => {
 //   try {
