@@ -46,13 +46,14 @@ export const getFood = async () => {
   }
 }
 
-// export const getJoke = async () => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// }
+export const getJoke = async () => {
+  try {
+    const response = await axios.get("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single")
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // export const getNews = async () => {
 //   try {
