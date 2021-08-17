@@ -1,0 +1,44 @@
+.settings {
+  margin: 2rem;
+}
+.settings-title {
+  margin-bottom: 2rem;
+  color: #FFF8E7;
+  text-align: center;
+}
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90vh;
+  padding: 1rem;
+
+  background-color: #FFF8E7;
+  border-radius: 4px;
+  color: #16263E;
+}
+.settings-subtitle, .settings-subtext {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.settings-subtext {
+  text-decoration: underline;
+}
+
+.checklist-item {
+margin: 1rem;
+}
+.checklist-label {
+  margin-left: 1rem;
+}
+
+.settings-button {
+  padding: 0.35rem 0;
+
+  background-color: #16263E;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  color: #FFF8E7;
+}
