@@ -6,9 +6,10 @@ color: #16263E;
 text-align: center;
 }
 .cosmic-title {
+  margin-bottom: 1rem;
+  
   font-size: 1.5rem;
   text-decoration: underline;
-  margin-bottom: 1rem;
 }
 .cosmic-picture {
   width: 75vw;

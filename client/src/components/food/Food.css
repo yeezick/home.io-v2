@@ -1,0 +1,26 @@
+.food {
+  padding: 1rem;
+  background-color: #FFF8E7;
+  border-radius: 4px;
+  color: #16263E;
+}
+.food * {
+  margin-bottom: 1rem;
+}
+.food-name {
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.food-refresh-icon {
+  margin: 0 auto;
+}
+.food-image {
+  width: 75vw;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+.food-url-icon , .food-refresh-icon{
+  margin: 0 30vw;
+  color: #16263E;
+}
