@@ -1,4 +1,15 @@
+.cat {
+ padding: 1rem;
+  background-color: #FFF8E7;
+  border-radius: 4px;
+  color: #16263E;;
+  text-align: center;
+}
+.cat-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
 .cat-pic {
-  width: 80vw;
+  width: 60vw;
   border-radius: 4px;
 }

@@ -15,9 +15,12 @@ const Cat = () => {
   },[])
 
   return (
-    <div className="cat">
-      <h3 className="user-component-title">A kitty to make your day</h3>
+    <div>
+      <h3 className="user-component-title">Cats</h3>
+      <div className="cat">
+      <p className="cat-title">It is really, <b><i>really</i></b> hard to get cuter than this</p>
       <img className="cat-pic" src={catPic} alt="random cat"/>
+      </div>
     </div>
   )
 }

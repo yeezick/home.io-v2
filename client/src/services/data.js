@@ -19,7 +19,8 @@ export const getCatPic = async () => {
 
 export const getCrypto = async () => {
   try {
-    const response = await axios.get("http://cors-lite.herokuapp.com/https://api.coincap.io/v2/assets?limit=10") 
+    const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10") 
+    console.log(response)
     return response.data
   } catch (error) {
     console.log(error)

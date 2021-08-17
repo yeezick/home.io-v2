@@ -1,0 +1,20 @@
+.crypto {
+  padding: 2rem;
+  background-color: #FFF8E7;
+  border-radius: 4px;
+  color: #16263E;
+}
+.crypto-item {
+  margin: 1rem 0;
+}
+.crypto-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+.crypto-name {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align:center;
+  margin-bottom: 1rem;
+}
