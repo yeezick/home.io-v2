@@ -1,5 +1,5 @@
 .user-home {
-  margin: 2rem;
+  margin: 0 2rem 2rem;
 }
 .user-home-landing::before {
   background: url("../../images/mobile-earth-from-space.jpg") no-repeat center;

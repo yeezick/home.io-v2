@@ -1,11 +1,38 @@
 .navbar {
-  background-color: #16263E;
-  color: #FFF8E7;
+  height: 4rem;
+  padding-left: 1rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #16263E;
+  border-bottom: 1px solid #FFF8E7;
+  color: #FFF8E7;
+}
+.navbar-title {
+  text-decoration: none;
+  color: #FFF8E7;
 }
 
 .navbar-left{
   display: flex;
   flex-direction: row;
   justify-items: center;
+  
+}
+.nav-nouser-links * {
+  text-decoration: none;
+  color: #FFF8E7;
+  margin: 0 .5rem;
+}
+.nav-links * {
+  text-decoration: none;
+  color: #FFF8E7;
+  margin: 0 1rem;
+}
+.nav-links *:hover{
+  background-color: #FFF8E7;
+  border-radius: 2px;
+  color: #16263E;
+  padding: 1rem;
 }

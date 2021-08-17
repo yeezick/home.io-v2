@@ -4,9 +4,10 @@ import Footer from "../footer/Footer.jsx"
 import "./Layout.css"
 
 const Layout = (props) => {
+  console.log(props)
   return (
     <div>
-      <Header/>
+      <Header user={props.user}/>
         {props.children}
       <Footer/>
     </div>

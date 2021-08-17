@@ -18,6 +18,7 @@ export const login = async (userData) => {
   try {
     const res = await api.post("users/login", { user: userData });
     const { token } = res.data;
+    console.log("res:", res)
     if (token) {
       localStorage.setItem("authToken", token);
       api.defaults.headers.common.authorization = `Bearer ${token}`;

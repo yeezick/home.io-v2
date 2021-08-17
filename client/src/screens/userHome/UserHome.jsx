@@ -23,6 +23,9 @@ const UserHome = ({ user, setUser }) => {
   if (!user) {
     return <h1> loading....</h1>;
   }
+  if(!user.apis) {
+    window.location.reload()
+  }
   console.log(user);
 
   let apiList = user.apis[0];
