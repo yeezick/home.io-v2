@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { deleteTodo, updateTodo } from "../../../services/todos";
+// icons
+import { VscClose } from "react-icons/vsc";
+import { TiPencil } from "react-icons/ti";
+import {HiOutlineClipboardCheck} from "react-icons/hi"
 
 import "./TodoItem.css";
 
@@ -29,16 +33,14 @@ const TodoItem = ({ item, user, setUser }) => {
 
   const handleDelete = async () => {
     const deletedItem = await deleteTodo(item.id);
-    // console.log(deletedItem)
     if (deletedItem === "DELETED") {
       setUser((prevState) => {
         return {
           ...prevState,
-          todos: user.todos.filter((todo) => todo.id !== item.id)
-        }
-      })
+          todos: user.todos.filter((todo) => todo.id !== item.id),
+        };
+      });
     }
-      
   };
 
   const handleEdit = async (e) => {
@@ -55,19 +57,21 @@ const TodoItem = ({ item, user, setUser }) => {
     setUser((prevState) => {
       return {
         ...prevState,
-        todos: user.todos.map((todo)=> todo.id === item.id ? todoItem : todo)
-      }
-    })
+        todos: user.todos.map((todo) =>
+          todo.id === item.id ? todoItem : todo
+        ),
+      };
+    });
     setEditState(!editState);
   };
 
   return (
-    <div>
-      <button onClick={handleDelete}>delete</button>
+    <div className="todo-item">
+      <VscClose onClick={handleDelete} />
       {!editState ? (
-        <p onClick={() => setEditState(!editState)}>{item.input}</p>
+        <p>{item.input}</p>
       ) : (
-        <form onSubmit={(e) => handleUpdate(e)}>
+        <div>
           <input
             type="text"
             value={updateTodoForm.input}
@@ -75,9 +79,10 @@ const TodoItem = ({ item, user, setUser }) => {
               handleEdit(e);
             }}
           />
-          <button>Update</button>
-        </form>
+          <HiOutlineClipboardCheck className="update-icon" onClick={(e) => handleUpdate(e)} />
+        </div>
       )}
+      <TiPencil onClick={() => setEditState(!editState)} />
     </div>
   );
 };

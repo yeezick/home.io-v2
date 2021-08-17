@@ -1,0 +1,8 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.update-icon {
+  margin-left: 4px;
+}

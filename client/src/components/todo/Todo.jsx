@@ -38,12 +38,12 @@ const Todo = ({ user, setUser }) => {
   }
 
   return (
-    <div>
-      <h3>On your agenda:</h3>
+    <div className="todo">
+      <p className="todo-title">On your agenda:</p>
       {user.todos.map((item, id) => (
         <TodoItem setUser={setUser} user={user} item={item} key={id}/>
       ))}
-      <form onSubmit={handleSubmit}>
+      <form className="todo-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="input"
@@ -52,7 +52,7 @@ const Todo = ({ user, setUser }) => {
           }}
           value={todoForm.input}
         />
-        <button type="submit">Submit</button>
+        <button className="todo-submit" type="submit">Submit</button>
       </form>
     </div>
   );

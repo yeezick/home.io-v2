@@ -1,0 +1,20 @@
+.todo {
+  padding: 1rem;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+}
+.todo-title{
+  color: #FFF8E7;
+  font-size: 1.65rem;
+}
+.todo-submit {
+  padding: 0 1rem;
+ 
+  background-color: #16263E;
+  border: none;
+  /* border-radius: 5px; */
+  color: #FFF8E7;
+  font-size: 1.05rem;
+}

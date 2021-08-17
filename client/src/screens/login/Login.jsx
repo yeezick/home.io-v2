@@ -11,7 +11,7 @@ const Login = ({ setLoginForm, loginForm, handleLogin }) => {
 
   return (
     <div className="login">
-      <h2 className="login-title">Your home is yours only.</h2>
+      <h2 className="login-title">Your home is yours alone.</h2>
       <form className="login-form" onSubmit={(e) => handleLogin(e)}>
         <p className="login-subtitle">
           If you lost your key, we can get it right back to you, just log in!{" "}
