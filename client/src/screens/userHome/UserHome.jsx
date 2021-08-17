@@ -23,21 +23,29 @@ const UserHome = ({ user, setUser }) => {
   if (!user) {
     return <h1> loading....</h1>;
   }
-
+  console.log(user);
 
   let apiList = user.apis[0];
   return (
-    <div>
-      <h1>I should be the User's home!</h1>
-      <Todo user={user} setUser={setUser}/>
-      {!apiList.cat ? null : <Cat />}
-      {!apiList.crypto ? null : <Crypto />}
-      {!apiList.cosmic ? null : <Cosmic />}
-      {!apiList.food ? null : <Food />}
-      {!apiList.joke ? null : <Joke />}
-      {!apiList.news ? null : <News />}
-      {!apiList.quote ? null : <Quote />}
-      {!apiList.weather ? null : <Weather />}
+    <div className="user-home">
+      <div className="user-home-landing">
+        <h2 className="user-home-title">
+          Welcome <br />
+          Home, <br /> {user.name}
+        </h2>
+        <Todo user={user} setUser={setUser} />
+      </div>
+
+      <div className="user-home-components">
+        {!apiList.cat ? null : <Cat />}
+        {!apiList.crypto ? null : <Crypto />}
+        {!apiList.cosmic ? null : <Cosmic />}
+        {!apiList.food ? null : <Food />}
+        {!apiList.joke ? null : <Joke />}
+        {!apiList.news ? null : <News />}
+        {!apiList.quote ? null : <Quote />}
+        {!apiList.weather ? null : <Weather />}
+      </div>
     </div>
   );
 };
