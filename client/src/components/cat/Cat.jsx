@@ -15,7 +15,8 @@ const Cat = () => {
   },[])
 
   return (
-    <div>
+    <div className="cat">
+      <h3 className="user-component-title">A kitty to make your day</h3>
       <img className="cat-pic" src={catPic} alt="random cat"/>
     </div>
   )
