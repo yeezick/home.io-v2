@@ -10,41 +10,68 @@ const SignUp = ({ handleRegister, registerForm, setRegisterForm }) => {
   };
 
   return (
-    <div>
-      <h1>register form below</h1>
-      <form onSubmit={(e) => handleRegister(e)}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={registerForm.name}
-          onChange={(e) => handleChange(e)}
-        />
+    <div className="signup">
+      <h2 className="signup-title">A place that only belongs to you.</h2>
+      <form className="signup-form" onSubmit={(e) => handleRegister(e)}>
+        <p className="signup-title-subtext">
+          Create an account to get started.
+        </p>
 
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          name="username"
-          value={registerForm.username}
-          onChange={(e) => handleChange(e)}
-        />
+        <div className="signup-item">
+          <label className="signup-label" htmlFor="name">
+            Name:
+          </label>
+          <input
+            className="signup-input"
+            type="text"
+            name="name"
+            value={registerForm.name}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={registerForm.email}
-          onChange={(e) => handleChange(e)}
-        />
+        <div className="signup-item">
+          <label className="signup-label" htmlFor="username">
+            Username:
+          </label>
+          <input
+            className="signup-input"
+            type="text"
+            name="username"
+            value={registerForm.username}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
 
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={registerForm.password}
-          onChange={(e) => handleChange(e)}
-        />
-        <button type="submit">Submit</button>
+        <div className="signup-item">
+          <label className="signup-label" htmlFor="email">
+            Email:
+          </label>
+          <input
+            className="signup-input"
+            type="email"
+            name="email"
+            value={registerForm.email}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+
+        <div className="signup-item">
+          <label className="signup-label" htmlFor="password">
+            Password:
+          </label>
+          <input
+            className="signup-input"
+            type="password"
+            name="password"
+            value={registerForm.password}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+
+        <button className="signup-button" type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

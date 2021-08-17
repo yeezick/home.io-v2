@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="about">
+        <hr/>
         <h4 className="footer-title"> From the Creator:</h4>
         <p className="about-text">
           I hope you enjoyed the site! During this project, I was a student of
