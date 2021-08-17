@@ -17,7 +17,11 @@ const Joke = () => {
 
   return (
     <div>
-      <p>{joke}</p>
+
+      <h3 className="user-component-title">Doctor-prescribed laughter</h3>
+      <div className="joke">
+      <p className="joke-text">{joke}</p>
+      </div>
     </div>
   )
 }

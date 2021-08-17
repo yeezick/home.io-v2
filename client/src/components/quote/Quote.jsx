@@ -17,7 +17,7 @@ const Quote = () => {
 
   return (
     <div>
-      <h3> Quote</h3>
+      <h3 className="user-components-title"> Quote</h3>
       <p>{quote.quote}</p>
       <p>{quote.author}</p>
     </div>
