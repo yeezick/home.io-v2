@@ -1,0 +1,12 @@
+.quote {
+padding: 1rem;
+
+  background-color: #FFF8E7;
+  border-radius: 4px;
+  color: #16263E;
+}
+.quote-author {
+  margin-top: 1rem;
+  text-align: right;
+  font-weight: bold;
+}

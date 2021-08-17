@@ -14,12 +14,15 @@ const Quote = () => {
     }
     fetchQuote()
   },[])
+  
 
   return (
     <div>
-      <h3 className="user-components-title"> Quote</h3>
-      <p>{quote.quote}</p>
-      <p>{quote.author}</p>
+      <h3 className="user-component-title"> Enlightenment or Introspection?</h3>
+      <div className="quote">
+      <p className="quote-text">"{quote.quote}"</p>
+      <p className="quote-author">- {quote.author}</p>
+      </div>
     </div>
   )
 }
