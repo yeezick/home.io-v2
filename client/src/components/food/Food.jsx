@@ -33,7 +33,7 @@ const Food = () => {
         <p className="food-veg"> <b>Vegetarian:</b> {food.vegetarian ? "Yes" : "No"}</p>
         {/* <p> Summary: {(food.summary)}</p> */}
         <p className="food-url"> <b>Want the full recipe? Follow the food truck!</b></p>
-        <a className="food-url-icon" href={food.spoonacularSourceUrl} target="_blank"> <GiFoodTruck size={60}/></a>
+        <a className="food-url-icon" href={food.spoonacularSourceUrl} target="_blank" rel="noreferrer" > <GiFoodTruck size={60}/></a>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const Cosmic = () => {
       <p className="cosmic-title"> {cosmicData.title}</p>
       <img className="cosmic-picture" src={cosmicData.url} alt="nasa daily astronomy"/>
       <p className="cosmic-text"> {cosmicData.explanation}</p>
-      <p className="cosmic-courtesy">Courtesy of <a href="https://www.nasa.gov/" target="_blank">NASA</a></p>
+      <p className="cosmic-courtesy">Courtesy of <a href="https://www.nasa.gov/" target="_blank" rel="noreferrer" >NASA</a></p>
     </div>
     </div>
   )
