@@ -6,7 +6,7 @@ import "./Layout.css"
 const Layout = (props) => {
   console.log(props)
   return (
-    <div>
+    <div className="layout">
       <Header user={props.user}/>
         {props.children}
       <Footer/>

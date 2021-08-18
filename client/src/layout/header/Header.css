@@ -30,9 +30,15 @@
   color: #FFF8E7;
   margin: 0 1rem;
 }
-.nav-links *:hover{
+.nav-links *:hover,.nav-nouser-links *:hover{
   background-color: #FFF8E7;
   border-radius: 2px;
   color: #16263E;
   padding: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .nav-links, .nav-nouser-links {
+    font-size: 1.5rem;
+  }
 }
