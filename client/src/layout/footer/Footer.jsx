@@ -49,6 +49,7 @@ const Footer = () => {
           Angela Yu
         </a>
       </div>
+      <p>Disclaimer: if you are an employer on desktop, please note this full-stack site was built in a 7 day timeframe with a mobile-first approach. Revisiting this site to optimize desk-top view (as well as animating the site) lives among my list of todos. </p>
     </footer>
   );
 };
