@@ -12,6 +12,9 @@ footer {
   border-radius: 2px;
   color: #fff8e7;
 }
+.footer-text {
+  text-align: left;
+}
 .network-link-container {
   display: flex;
   justify-content: space-evenly;
@@ -23,7 +26,13 @@ footer {
 .support-link {
   display: block;
 }
-
+.about{
+  text-align: center;
+}
+.octocat{
+  margin: 1rem auto;
+  height: 4rem;
+}
 @media screen and (min-width: 700px) {
   .footer-text  {
     font-size: 1.5rem;
