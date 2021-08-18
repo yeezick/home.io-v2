@@ -10,7 +10,7 @@
 }
 .landing-title, .landing-text {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  border-radius: 0 0 5px 5px;
+  border-radius:  3px;
 }
 .landing-title {
   padding: 0.25rem 1rem; 
@@ -50,26 +50,25 @@
 
 .registration {
   height: 90vh;
-  position: relative;
-  /* max-width: 90vw; */
-  background: url("../../images/mobile-postcards-bg.jpeg") no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: url("../../images/mobile-postcards-bg.jpeg") no-repeat center;
   background-size: cover;
   text-align: center;
 }
 /* needs a handwritten font */
 .registration-text {
-  position: absolute;
-  top: 24%;
-  left: 42%;
-  width: 50vw;
-  
+  width: 35vw;
+  align-self:flex-end;
+  margin:5rem 5rem 0;
   color: black;
   font-size: 1.5rem;
   transform:rotate(340deg)
 }
 
 .registration-button {
- margin-top: 70vh;
+ /* margin-top: 70vh; */
  padding: .75rem 1rem;
  
  background-color: #16263E;
@@ -79,3 +78,44 @@
  font-size: 1.25rem;
 
 }
+
+
+@media screen and (min-width: 700px) {
+  .landing {
+    background: url("../../images/laptop-map.jpeg") no-repeat center;
+    background-size: cover;
+  }
+  .landing-title {
+    width: fit-content;
+  }
+  .landing-text {
+    font-size: 1.75rem;
+    width: 70%;
+    padding:0.5rem 1rem;
+  }
+  
+  .description {
+    width: 65vw;
+    margin: 2rem auto;
+  }
+
+  .registration {
+    background: url("../../images/postcards-bg.jpg") no-repeat center;
+    background-size: cover;
+    justify-content:center;
+  }
+  .registration-text {
+    background-image: linear-gradient(rgba(255, 248, 231, 0.2), rgba(255, 248, 231, 0.2));
+    border-radius: 3px;
+    padding: 2rem;
+
+    width: 40vw;
+    align-self:center;
+    margin:5rem;
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+    transform:rotate(0deg)
+  }
+}
+

@@ -10,6 +10,8 @@
   color: #FFF8E7;
 }
 .navbar-title {
+  display: flex;
+  justify-content: space-between;
   text-decoration: none;
   color: #FFF8E7;
 }
