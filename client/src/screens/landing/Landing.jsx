@@ -10,7 +10,7 @@ const Landing = () => {
           <p className="landing-text">Now you never have to be far.</p>
         </div>
       </section>
-
+      <hr/>
       <section className="description">
         <h2 className="description-title">Welcome Home</h2>
         <div className="description-info">
@@ -36,7 +36,7 @@ const Landing = () => {
           <p>I am another Inspo component</p>
         </div>
       </section>
-
+<hr/>
       <section className="registration">
         <div className="registration-text">
           <p>
