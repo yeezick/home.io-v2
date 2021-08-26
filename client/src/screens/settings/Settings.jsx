@@ -20,6 +20,7 @@ const Settings = ({ user, setUser }) => {
   // const [weatherLocation, setWeatherLocation]
 
   useEffect(() => {
+
     if (user) {
       console.log(user);
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
@@ -27,9 +28,10 @@ const Settings = ({ user, setUser }) => {
 
       setApiList({ cat, crypto, cosmic, food, joke, news, quote, weather });
     }
-  }, [user]);
+  }, []);
 
   if (!user) {
+      // window.location.reload();
     return <h1> loading</h1>;
   }
 
