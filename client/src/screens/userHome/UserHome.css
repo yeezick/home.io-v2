@@ -1,6 +1,5 @@
 .user-home-landing::before {
   background: url("../../images/mobile-earth-from-space.jpg") no-repeat center;
-
 }
 .user-home-landing {
   display: flex;
@@ -16,27 +15,41 @@
   text-align: center;
 }
 
-.user-home-title{
+.user-home-title {
   margin-bottom: 2rem;
   padding: 1rem;
-overflow-wrap: break-word;
-width: fit-content;
-max-width: 100vw;
-  
+  overflow-wrap: break-word;
+  width: fit-content;
+  max-width: 100vw;
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   border-radius: 4px;
-  color: #FFF8E7;
+  color: #fff8e7;
   text-align: left;
 }
 
-.user-home-components{
+.user-home-components {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
 .user-component-title {
-  color: #FFF8E7;
+  color: #fff8e7;
   font-size: 1.75rem;
   text-align: center;
   margin: 2rem 0;
+}
+
+@media screen and (min-width: 800px) {
+  .user-home-landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("../../images/mobile-earth-from-space.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .user-home-title {
+    background-image: none;
+    font-size: 3.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
 }

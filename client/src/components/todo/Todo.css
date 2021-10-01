@@ -1,20 +1,35 @@
 .todo {
-  padding: 1rem;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  background-color: #16263e;
   border-radius: 4px;
+  border: 1px solid #fff8e7; 
+  padding: 1rem;
   text-align: center;
 }
-.todo-title{
-  color: #FFF8E7;
+.todo-title {
+  color: #fff8e7;
   font-size: 1.65rem;
+  text-decoration: underline;
 }
 .todo-submit {
-  padding: 0 1rem;
- 
-  background-color: #16263E;
+  background-color: #fff8e7;
   border: none;
-  /* border-radius: 5px; */
-  color: #FFF8E7;
-  font-size: 1.05rem;
+  border-radius: 3px;
+  color: #16263e;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 5px auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .todo-title {
+    font-size: 2rem;
+  }
+  .todo-form input {
+    border-radius: 2px;
+    font-size: 1.25rem;
+    height: 2rem;
+    padding-left: 1rem;
+  }
 }

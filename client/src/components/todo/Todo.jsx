@@ -47,6 +47,7 @@ const Todo = ({ user, setUser }) => {
         <input
           type="text"
           name="input"
+          placeholder="Missing anything?"
           onChange={(e) => {
             handleChange(e);
           }}
