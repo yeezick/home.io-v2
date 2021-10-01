@@ -1,45 +1,42 @@
-import {GoMarkGithub} from "react-icons/go"
-import {SiLinkedin, SiMailDotRu, SiTwitter} from "react-icons/si"
+import { GoMarkGithub } from "react-icons/go";
+import { SiLinkedin, SiMailDotRu, SiTwitter } from "react-icons/si";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer>
       <div className="about">
-        <hr/>
+        <hr />
         <h4 className="footer-title footer-text"> From the Creator:</h4>
         <p className="footer-text">
-          I hope you enjoyed the site! During this project, I was a student of
-          General Assembly's Software Engineering Immersive. Below are my
-          networks, but if you'd like to see the codebase, OctoCat might know
-          the way...
+          Thanks for taking the time to view my site! If you'd like to connect,
+          my networks are below!{" "}
         </p>
       </div>
       <div className="networks">
-        <h4 className="footer-title footer-text">Let's Connect!</h4>
+        {/* <h4 className="footer-title footer-text">Let's Connect!</h4> */}
         <div className="network-link-container">
-
-        <a href="https://github.com/yeezick" className="network-link">
-          <GoMarkGithub size={50}/>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/erick-manrique/"
-          className="network-link"
+          <a href="https://github.com/yeezick" className="network-link">
+            <GoMarkGithub size={50} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/erick-manrique/"
+            className="network-link"
           >
-          <SiLinkedin size={50}/>
-        </a>
-        <a href="https://twitter.com/erckmun" className="network-link">
-          <SiTwitter size={50}/>
-        </a>
-        <a
-          href="mailto:ramerick5@gmail.com?subject=Nice%20Webpage"
-          className="network-link"
+            <SiLinkedin size={50} />
+          </a>
+          <a href="https://twitter.com/erckmun" className="network-link">
+            <SiTwitter size={50} />
+          </a>
+          <a
+            href="mailto:ramerick5@gmail.com?subject=Nice%20Webpage"
+            className="network-link"
           >
-          <SiMailDotRu size={50}/>
-        </a>
-          </div>
+            <SiMailDotRu size={50} />
+          </a>
+        </div>
       </div>
-      <div className="support">
+      {/* <div className="support">
         <h4 className="footer-title footer-text">Special Thanks:</h4>
         <a className="support-link footer-text" href="https://generalassemb.ly/">
           General Assembly
@@ -50,7 +47,7 @@ const Footer = () => {
         >
           Angela Yu
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 };
