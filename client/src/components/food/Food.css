@@ -5,7 +5,7 @@
   color: #16263E;
 }
 .food * {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .food-name {
   font-size: 1.5rem;
@@ -26,4 +26,7 @@
   color: #16263E;
   display: block;
   margin: 0 auto;
+}
+.food-url-icon {
+  margin: 0 45%;
 }

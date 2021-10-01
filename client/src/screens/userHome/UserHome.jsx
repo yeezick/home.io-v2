@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // components
 import Cat from "../../components/cat/Cat.jsx";
 import Crypto from "../../components/crypto/Crypto.jsx";

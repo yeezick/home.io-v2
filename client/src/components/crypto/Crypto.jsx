@@ -33,8 +33,7 @@ const Crypto = () => {
         <hr/>
         {cryptoData.map((crypto, id) => (
           <div className="crypto-item" key={id}>
-            <p className="crypto-name"> {crypto.name}</p>
-            <p className="crypto-symbol"><b>Symbol:</b> {crypto.symbol.toUpperCase()} </p>
+            <p className="crypto-name"> {crypto.name} <br/>({crypto.symbol.toUpperCase()})</p>
             <p className="crypto-price"> <b>Price:</b> {handleConversion(crypto.current_price)} </p>
             <p className="crypto-percent">
               <b>Change over 24 hours:</b> <br/> {crypto.price_change_percentage_24h} %

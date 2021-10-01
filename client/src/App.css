@@ -37,5 +37,9 @@ h2 {
   .crypto, .cat, .cosmic, .food, .joke, .news, .quote, .todo, .weather {
     width: 50vw;
     margin: 0 auto;
+    padding: 2.5rem !important;
+  }
+  .crypto p, .cat p, .cosmic p, .food p, .joke p, .news p, .quote p, .todo p, .weather p {
+  font-size: 1.5rem;
   }
 }

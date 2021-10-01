@@ -13,7 +13,14 @@
   text-align: center;
 }
 .news-icon {
-  margin: 0 30vw;
+  margin: 0 45%;
 
   color: #16263e
+}
+
+@media screen and (min-width: 800px) {
+  .news-headline {
+    font-size: 2rem;
+    text-decoration: underline;
+  }
 }

@@ -18,3 +18,27 @@
   text-align:center;
   margin-bottom: 1rem;
 }
+
+@media screen and (min-width: 800px) {
+  .crypto-item {
+    display: grid;
+    grid-template-areas: 
+    "name price"
+    "name percent"
+    "hr hr";
+  }
+  .crypto-name {
+    grid-area: name;
+    width: 10vw;
+  }
+  .crypto-price {
+    grid-area: price;
+  }
+  .crypto-percent {
+    grid-area: percent;
+  }
+  .crypto-item hr {
+    grid-area: hr;
+    margin: 1rem;
+  }
+}

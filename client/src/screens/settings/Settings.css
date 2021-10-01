@@ -52,9 +52,10 @@ margin: 1rem;
     font-size: 2.5rem;
   }
   .settings-subtitle, .settings-subtext {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .settings-button {
+    font-size: 1.5rem;
     max-width: 30vw;
     margin: 0 auto;
     padding: .5rem 1rem;

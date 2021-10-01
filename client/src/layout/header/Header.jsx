@@ -7,7 +7,6 @@ const Header = ({ user }) => {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        {/* <p>icon</p> */}
         {!user ? (
           <Link to="/" className="navbar-title">
             <FaHome size={40} />

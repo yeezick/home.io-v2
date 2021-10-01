@@ -16,7 +16,7 @@
   color: #FFF8E7;
 }
 .navbar-title * {
-/* margin: 0 1rem; */
+/* margin: 0 .5rem; */
 }
 
 .navbar-left{
@@ -48,6 +48,9 @@
 }
 
 @media screen and (min-width: 700px) {
+  .navbar-title * {
+    margin: 0 .5rem;
+  }
   .nav-links, .nav-nouser-links {
     font-size: 1.5rem;
   }

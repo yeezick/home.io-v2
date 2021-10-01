@@ -18,6 +18,7 @@ footer {
 .network-link-container {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 .network-link, .support-link {
   color: #fff8e7;
