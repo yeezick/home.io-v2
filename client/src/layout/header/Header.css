@@ -15,6 +15,9 @@
   text-decoration: none;
   color: #FFF8E7;
 }
+.navbar-title * {
+/* margin: 0 1rem; */
+}
 
 .navbar-left{
   display: flex;

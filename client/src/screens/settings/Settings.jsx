@@ -1,5 +1,3 @@
-// this component has an example of a useEffect which rerenders when user state successfully loads
-
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { updateApi } from "../../services/api";
@@ -18,16 +16,15 @@ const Settings = ({ user, setUser }) => {
     quote: false,
     weather: false,
   });
-  // const [weatherLocation, setWeatherLocation]
 
   useEffect(() => {
-    if (user.apis) {
+    if (user && user.apis) {
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
         user.apis[0];
 
       setApiList({ cat, crypto, cosmic, food, joke, news, quote, weather });
     }
-  }, [user.apis]);
+  }, [user]);
 
   if (!user) {
     return <h1> loading</h1>;

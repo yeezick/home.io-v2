@@ -42,3 +42,20 @@ margin: 1rem;
   font-size: 1.25rem;
   color: #FFF8E7;
 }
+
+@media screen and (min-width: 800px) {
+  .checklist {
+    font-size: 1.5rem
+  }
+  .settings-title {
+    font-size: 2.5rem;
+  }
+  .settings-subtitle, .settings-subtext {
+    font-size: 2rem;
+  }
+  .settings-button {
+    max-width: 30vw;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+  }
+}

@@ -11,7 +11,9 @@ const Layout = ({user, children}) => {
       <Header user={user}/>
     : <Header />
     }
+    <div className="layout-children">
         {children}
+    </div>
       <Footer/>
     </div>
   )

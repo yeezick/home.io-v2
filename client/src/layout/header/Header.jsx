@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {FaHome} from "react-icons/fa"
+import { FaHome } from "react-icons/fa";
 
 import "./Header.css";
 
@@ -9,14 +9,16 @@ const Header = ({ user }) => {
       <div className="navbar-left">
         {/* <p>icon</p> */}
         {!user ? (
-       <Link to="/" className="navbar-title">
-         <FaHome size={40}/>
-         <h1>Home.io</h1></Link>)
-      :
-      (
-      <Link to="/welcome" className="navbar-title"><h1>Home.io</h1></Link>
-      )
-      }
+          <Link to="/" className="navbar-title">
+            <FaHome size={40} />
+            <h1>Home.io</h1>
+          </Link>
+        ) : (
+          <Link to="/welcome" className="navbar-title">
+            <FaHome size={40} />
+            <h1>Home.io</h1>
+          </Link>
+        )}
       </div>
 
       <div className="nav-right">

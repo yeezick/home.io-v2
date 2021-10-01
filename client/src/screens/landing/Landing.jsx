@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+import Quote from "../../components/quote/Quote"
 import "./Landing.css";
 
 const Landing = () => {
@@ -6,7 +8,7 @@ const Landing = () => {
     <div>
       <section className="landing">
         <div className="landing-content">
-          <h2 className="landing-title">Home is where You are</h2>
+          <h2 className="landing-title">Home is where <i>you</i> are</h2>
           <p className="landing-text">Now you never have to be far.</p>
         </div>
       </section>
@@ -33,7 +35,7 @@ const Landing = () => {
             Home.io gives you the opportunity to decorate your safe place in a
             way that’s personal to you. This way, you always feel right at home.
           </p>
-          <p>I am another Inspo component</p>
+    <Quote />
         </div>
       </section>
 <hr/>
