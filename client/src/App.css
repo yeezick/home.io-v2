@@ -23,7 +23,7 @@ form {
   margin: 0 auto;
 }
 .cat-pic,.cosmic-picture, .food-image {
-  max-width: 55vw !important;
+  max-width: 90% !important;
   margin: 0 auto !important;
 }
 .food-image {

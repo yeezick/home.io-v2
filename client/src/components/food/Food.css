@@ -16,11 +16,14 @@
   margin: 0 auto;
 }
 .food-image {
-  width: 75vw;
+  display: block;
+  width: fit-content;
+  max-width: 80%;
   border-radius: 4px;
   margin: 1rem 0;
 }
 .food-url-icon , .food-refresh-icon{
-  margin: 0 30vw;
   color: #16263E;
+  display: block;
+  margin: 0 auto;
 }
