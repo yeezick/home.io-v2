@@ -20,18 +20,15 @@ const Settings = ({ user, setUser }) => {
   // const [weatherLocation, setWeatherLocation]
 
   useEffect(() => {
-
-    if (user) {
-      console.log(user);
+    if (user.apis) {
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
         user.apis[0];
 
       setApiList({ cat, crypto, cosmic, food, joke, news, quote, weather });
     }
-  }, []);
+  }, [user.apis]);
 
   if (!user) {
-      // window.location.reload();
     return <h1> loading</h1>;
   }
 
@@ -45,16 +42,15 @@ const Settings = ({ user, setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    history.push(`/welcome`);
     const { id } = user.apis[0];
     const userApiList = await updateApi(id, apiList);
-    console.log("user:", userApiList);
     setUser((prevUser) => {
       return {
         ...prevUser,
         apis: [userApiList],
       };
     });
-    history.push(`/welcome`);
   };
 
   // todo: the following code is meant for implementation of weather component. At this moment,the weather component is on hold because of time constraints. please return to this.

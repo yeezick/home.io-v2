@@ -4,7 +4,7 @@ footer {
   margin: 1rem 2rem;
 }
 .footer-title {
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 0.25rem 0.5rem;
   width: fit-content;
 
@@ -12,8 +12,8 @@ footer {
   border-radius: 2px;
   color: #fff8e7;
 }
-.footer-text {
-  text-align: left;
+.networks {
+  padding-top: 1rem;
 }
 .network-link-container {
   display: flex;

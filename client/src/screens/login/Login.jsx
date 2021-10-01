@@ -44,7 +44,7 @@ const Login = ({ setLoginForm, loginForm, handleLogin }) => {
         </div>
 
         <button className="login-button" type="submit">
-          Generate key
+          Submit
         </button>
       </form>
     </div>

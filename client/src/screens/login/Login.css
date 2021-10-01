@@ -34,7 +34,7 @@
  flex-direction: column;
 }
 .login-label {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 .login-input {
@@ -42,8 +42,8 @@ padding-left: 1rem;
 
   border: 1px solid gray;
   border-radius: 4px;
-  font-size: 1.1rem;
-  height: 2rem;
+  font-size: 1.5rem;
+  height: 2.5rem;
 }
 .login-button {
   align-self: center;

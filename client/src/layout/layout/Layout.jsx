@@ -3,12 +3,15 @@ import Footer from "../footer/Footer.jsx"
 
 import "./Layout.css"
 
-const Layout = (props) => {
-  console.log(props)
+const Layout = ({user, children}) => {
+  // console.log(props)
   return (
     <div className="layout">
-      <Header user={props.user}/>
-        {props.children}
+      {user ? 
+      <Header user={user}/>
+    : <Header />
+    }
+        {children}
       <Footer/>
     </div>
   )

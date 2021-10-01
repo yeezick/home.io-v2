@@ -40,7 +40,9 @@ class UsersController < ApplicationController
       render json: {
         user: user.attributes.except("password_digest"),
         token: token,
-      }, status: :created
+      }, 
+      include: [:apis, :todos],
+      status: :created
     else 
       render json: user.errors, status: 422
     end
