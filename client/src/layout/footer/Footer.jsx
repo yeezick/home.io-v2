@@ -14,7 +14,6 @@ const Footer = () => {
         </p>
       </div>
       <div className="networks">
-        {/* <h4 className="footer-title footer-text">Let's Connect!</h4> */}
         <div className="network-link-container">
           <a href="https://github.com/yeezick" className="network-link">
             <GoMarkGithub size={50} />
@@ -36,18 +35,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      {/* <div className="support">
-        <h4 className="footer-title footer-text">Special Thanks:</h4>
-        <a className="support-link footer-text" href="https://generalassemb.ly/">
-          General Assembly
-        </a>
-        <a
-          className="support-link footer-text"
-          href="https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/"
-        >
-          Angela Yu
-        </a>
-      </div> */}
     </footer>
   );
 };

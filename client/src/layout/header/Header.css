@@ -22,10 +22,15 @@
   justify-items: center;
   
 }
+
+.nav-right {
+  padding-right: 1rem;
+}
 .nav-nouser-links * {
-  text-decoration: none;
   color: #FFF8E7;
+  font-size: 1.3rem;
   margin: 0 .5rem;
+  text-decoration: none;
 }
 .nav-links * {
   text-decoration: none;

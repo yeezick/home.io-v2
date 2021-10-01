@@ -7,6 +7,7 @@ export const register = async (userData) => {
     if (token) {
       localStorage.setItem("authToken", token);
       api.defaults.headers.common.authorization = `Bearer ${token}`;
+      console.log("services:",res.data.user)
       return res.data.user;
     }
   } catch (error) {
