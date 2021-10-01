@@ -38,6 +38,7 @@ function App() {
     const user = await register(registerForm);
     setUser(user);
     history.push("/settings");
+    window.location.reload();
   };
 
   const handleLogin = async (e) => {

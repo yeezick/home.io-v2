@@ -22,7 +22,6 @@ const Settings = ({ user, setUser }) => {
 
   useEffect(() => {
     if (user.apis) {
-      console.log("seetings:", user);
       const { cat, crypto, cosmic, food, joke, news, quote, weather } =
         user.apis[0];
 

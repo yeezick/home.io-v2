@@ -1,4 +1,4 @@
-# Home.io (2.0.0)
+# [Home.io (2.0.0)](https://homeio.netlify.app/)
 
 - [Overview](#overview)
 - [MVP](#mvp)

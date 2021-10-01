@@ -12,6 +12,10 @@ const Footer = () => {
           Thanks for taking the time to view my site! If you'd like to connect,
           my networks are below!{" "}
         </p>
+        <a href="https://github.com/yeezick/home.io-v2"
+          className="network-link octocat-link" rel="noreferrer">
+        <img className="octocat" src="/octocat-jedi.png" alt="octo cat jedi"/>
+          </a>
       </div>
       <div className="networks">
         <div className="network-link-container">
@@ -35,6 +39,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      <p><small>Disclaimer: if you are an employer on desktop, please note this full-stack site was built in a 7 day timeframe with a mobile-first approach. Revisiting this site to optimize desk-top view (as well as animating the site) lives among my list of todos.</small> </p>
     </footer>
   );
 };
