@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { updateApi } from "../../services/api";
+import { getUserTodos } from "../../services/todos";
 import "./Settings.css";
 
 const Settings = ({ user, setUser }) => {
@@ -43,16 +44,18 @@ const Settings = ({ user, setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    history.push(`/welcome`);
-    const { id } = user.apis[0];
+    const { id } = user;
     const userApiList = await updateApi(id, apiList);
+    const userTodoList = await getUserTodos(id)
     console.log("user:", userApiList);
     setUser((prevUser) => {
       return {
         ...prevUser,
         apis: [userApiList],
+        todos: [...userTodoList]
       };
     });
+    history.push(`/welcome`);
   };
 
   // todo: the following code is meant for implementation of weather component. At this moment,the weather component is on hold because of time constraints. please return to this.
