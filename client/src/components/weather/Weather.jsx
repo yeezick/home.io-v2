@@ -1,9 +1,22 @@
-// import {useState, useEffect} from "react"
-// import {getWeather} from "../../services/data"
-import "./Weather.css"
+import { useState, useEffect } from "react";
+import { getWeather } from "../../services/data";
+import "./Weather.css";
 
 const Weather = () => {
+  const [weatherData, setWeatherData] = useState({});
+  const [lat, setLat] = useState(0);
+  const [long, setLong] = useState(0);
 
+  useEffect(() => {
+    const getWeatherData = async () => {
+       await navigator.geolocation.getCurrentPosition((position) => {
+         setLong(position.coords.longitude);
+         setLat(position.coords.latitude);
+        });
+        const weather =  getWeather(lat, long);
+      };
+      getWeatherData();
+    },[]);
   // const [weather, setWeather] = useState({})
   // if ("navigator" in geolocation) {
 
@@ -13,11 +26,7 @@ const Weather = () => {
   //   })
   // }
 
-  return (
-    <div>
-      I'm the weather!
-    </div>
-  )
-}
+  return <div>I'm the weather!</div>;
+};
 
-export default Weather
+export default Weather;

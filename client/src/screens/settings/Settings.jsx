@@ -14,7 +14,7 @@ const Settings = ({ user, setUser }) => {
     joke: false,
     news: false,
     quote: false,
-    weather: false,
+    weather: true,
   });
 
   useEffect(() => {
@@ -52,25 +52,6 @@ const Settings = ({ user, setUser }) => {
     });
     history.push(`/welcome`);
   };
-
-  // todo: the following code is meant for implementation of weather component. At this moment,the weather component is on hold because of time constraints. please return to this.
-  // const [lat, setLat] = useState(null);
-  // const [lng, setLng] = useState(null);
-  // const [status, setStatus] = useState(null);
-  // const getLocation = () => {
-  //   if (!navigator.geolocation) {
-  //     setStatus('Geolocation is not supported by your browser');
-  //   } else {
-  //     setStatus('Locating...');
-  //     navigator.geolocation.getCurrentPosition((position) => {
-  //       setStatus(null);
-  //       setLat(position.coords.latitude);
-  //       setLng(position.coords.longitude);
-  //     }, () => {
-  //       setStatus('Unable to retrieve your location');
-  //     });
-  //   }
-  // }
 
   return (
     <div className="settings">
