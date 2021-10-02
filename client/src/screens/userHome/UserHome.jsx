@@ -26,7 +26,6 @@ const UserHome = ({ user, setUser }) => {
   if(!user.apis) {
     window.location.reload()
   }
-  console.log(user);
 
   let apiList = user.apis[0];
   return (
@@ -47,7 +46,7 @@ const UserHome = ({ user, setUser }) => {
         {!apiList.joke ? null : <Joke />}
         {!apiList.news ? null : <News />}
         {!apiList.quote ? null : <Quote />}
-        {!apiList.weather ? null : <Weather />}
+        {/* {!apiList.weather ? null : <Weather />} */}
       </div>
       <hr/>
 

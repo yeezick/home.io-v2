@@ -36,7 +36,6 @@ const News = () => {
   //   console.log(e)
   //   const {value} = e.target
   // }
-  console.log(news)
   return (
     <div>
       <h3 className="user-component-title">Headlines Around the World</h3>
