@@ -13,7 +13,8 @@ const Weather = () => {
          setLong(position.coords.longitude);
          setLat(position.coords.latitude);
         });
-        const weather =  getWeather(lat, long);
+        const data =  getWeather(lat, long);
+        setWeatherData(data)
       };
       getWeatherData();
     },[]);
