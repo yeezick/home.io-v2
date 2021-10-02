@@ -43,7 +43,6 @@ const Settings = ({ user, setUser }) => {
     const { id } = user;
     const userApiList = await updateApi(id, apiList);
     const userTodoList = await getUserTodos(id)
-    console.log("user:", userApiList);
     setUser((prevUser) => {
       return {
         ...prevUser,

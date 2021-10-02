@@ -7,6 +7,12 @@ import axios from "axios"
 //   },
 // };
 
+const cosmicKey = process.env.REACT_APP_COSMIC
+const foodKey = process.env.REACT_APP_FOOD
+const newsKey = process.env.REACT_APP_NEWS
+
+
+
 export const getCatPic = async () => {
   try {
     const response = await axios.get("https://api.thecatapi.com/v1/images/search")
@@ -20,27 +26,24 @@ export const getCatPic = async () => {
 export const getCrypto = async () => {
   try {
     const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10") 
-    console.log(response)
     return response.data
   } catch (error) {
     console.log(error)
   }
 }
 
-// todo: hide api key
 export const getCosmic = async () => {
   try {
-    const response = await axios.get("https://api.nasa.gov/planetary/apod?api_key=3ZflFQUbUgnxtomWnbN6ROEMWjeMA89vRGtW9Vdv")
+    const response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${cosmicKey}`)
     return response.data
   } catch (error) {
     console.log(error)
   }
 }
 
-// todo: hide api key
 export const getFood = async () => {
   try {
-    const response = await axios.get("https://api.spoonacular.com/recipes/random?apiKey=9262166b66784697a6bdd37ebf013b43")
+    const response = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${foodKey}`)
     return response.data
   } catch (error) {
     console.log(error)
@@ -56,10 +59,9 @@ export const getJoke = async () => {
   }
 }
 
-// todo: hide apiKey
 export const getNews = async () => {
   try {
-    const response = await axios.get("http://api.mediastack.com/v1/news?access_key=6093edc68c7322dfa2913f7433667f4d&languages=en")
+    const response = await axios.get(`http://api.mediastack.com/v1/news?access_key=${newsKey}&languages=en`)
     return response.data
   } catch (error) {
     console.log(error)

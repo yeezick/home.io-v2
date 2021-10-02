@@ -10,7 +10,6 @@ const Quote = () => {
     const fetchQuote = async () => {
       const response = await getQuote()
       setQuote(response)
-      console.log(response)
     }
     fetchQuote()
   },[])
