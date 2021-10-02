@@ -10,7 +10,6 @@ const Joke = () => {
     const fetchJoke = async () => {
       const response = await getJoke();
       setJoke(response.joke)
-      console.log(response)
     }
     fetchJoke();
   }, [])

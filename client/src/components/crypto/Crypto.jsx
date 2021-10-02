@@ -8,7 +8,6 @@ const Crypto = () => {
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await getCrypto();
-      console.log("crypto:", response);
       setCryptoData(response);
     };
     fetchCrypto();
@@ -20,11 +19,9 @@ const Crypto = () => {
   
   const handleConversion = (price) => {
     const dollar = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(price)
-    console.log(dollar)
     return dollar
   }
 
-  console.log("cryptoState:", cryptoData[0]);
   return (
     <div>
       <h3 className="user-component-title">CryptoCurrency</h3>

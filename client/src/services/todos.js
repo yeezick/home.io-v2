@@ -2,7 +2,6 @@ import api from "./apiConfig"
 
 export const getUserTodos = async (userID) => {
   const res = await api.get(`/users/${userID}/todos`)
-  console.log("todos", res.data)
   return res.data
 }
 
