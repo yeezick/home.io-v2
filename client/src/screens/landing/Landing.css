@@ -54,7 +54,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: url("../../images/mobile-postcards-bg.jpeg") no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/mobile-postcards-bg.jpeg") ;
+  background-position: center;
   background-size: cover;
   text-align: center;
 }
@@ -62,11 +63,13 @@
 .registration-text {
   width: 35vw;
   align-self:flex-end;
-  margin:5rem 5rem 0;
-  color: black;
+  margin:6.5rem 5rem 0;
+  color: #FFF8E7;
   font-size: 1.5rem;
   font-weight: 600;
-  transform:rotate(340deg)
+  transform:rotate(340deg);
+  text-shadow: 2px 2px #16263E;
+
 }
 
 .registration-button {
