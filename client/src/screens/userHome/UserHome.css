@@ -16,16 +16,17 @@
 }
 
 .user-home-title {
-  margin-bottom: 2rem;
+  margin:0 auto 2rem;
   padding: 1rem;
   overflow-wrap: break-word;
   width: fit-content;
   max-width: 100vw;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   border-radius: 4px;
-  color: #fff8e7;
-  text-align: left;
+  color: #fff8e7 ;
+  text-align: center;
+  text-shadow: 4px 4px #16263E;
+  letter-spacing: 3px;
 }
 
 .user-home-components {
@@ -35,9 +36,11 @@
 }
 .user-component-title {
   color: #fff8e7;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin: 2rem 0;
+  text-decoration: underline;
+  margin: 2rem auto;
+  max-width: 90vw;
 }
 
 @media screen and (min-width: 800px) {
