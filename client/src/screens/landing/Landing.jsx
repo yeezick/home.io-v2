@@ -51,6 +51,7 @@ const Landing = () => {
           <button className="registration-button">Create your space</button>
         </Link>
       </section>
+      <hr/>
     </div>
   );
 };

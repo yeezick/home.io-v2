@@ -1,4 +1,6 @@
-.user-home-landing::before {
+.user-home hr {
+  margin-top: 1rem;
+}.user-home-landing::before {
   background: url("../../images/mobile-earth-from-space.jpg") no-repeat center;
 }
 .user-home-landing {

@@ -49,6 +49,8 @@ const UserHome = ({ user, setUser }) => {
         {!apiList.quote ? null : <Quote />}
         {!apiList.weather ? null : <Weather />}
       </div>
+      <hr/>
+
     </div>
   );
 };

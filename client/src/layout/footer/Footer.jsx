@@ -5,8 +5,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <div className="about">
-        <hr />
+      <div className="footer">
         <h4 className="footer-title footer-text"> From the Creator:</h4>
         <p className="footer-text">
           Thanks for taking the time to view my site! If you'd like to connect,
