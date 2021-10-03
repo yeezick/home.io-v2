@@ -82,7 +82,7 @@ export const getNews = async () => {
 export const getQuote = async () => {
   try {
     const response = await axios.get(
-      "http://cors-lite.herokuapp.com/https://inspiration.goprogram.ai/"
+      "https://inspiration.goprogram.ai/"
     );
     return response.data;
   } catch (error) {}
