@@ -71,7 +71,7 @@ export const getJoke = async () => {
 export const getNews = async () => {
   try {
     const response = await axios.get(
-      `https://api.mediastack.com/v1/news?access_key=${newsKey}&languages=en`
+      `http://api.mediastack.com/v1/news?access_key=${newsKey}&languages=en`
     );
     return response.data;
   } catch (error) {
