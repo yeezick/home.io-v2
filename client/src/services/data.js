@@ -71,7 +71,7 @@ export const getJoke = async () => {
 export const getNews = async () => {
   try {
     const response = await axios.get(
-      `http://api.mediastack.com/v1/news?access_key=${newsKey}&languages=en`
+      `http://cors-lite.herokuapp.com/http://api.mediastack.com/v1/news?access_key=${newsKey}&languages=en`
     );
     return response.data;
   } catch (error) {
@@ -82,7 +82,7 @@ export const getNews = async () => {
 export const getQuote = async () => {
   try {
     const response = await axios.get(
-      "https://inspiration.goprogram.ai/"
+      "http://cors-lite.herokuapp.com/https://inspiration.goprogram.ai/"
     );
     return response.data;
   } catch (error) {}
