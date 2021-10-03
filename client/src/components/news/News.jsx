@@ -19,6 +19,7 @@ const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       const response = await getNews();
+      console.log("response", response)
       setNews(response)
       const dateAsString = new Date(response.data[0].published_at).toLocaleDateString();
       setDisplayNews({
@@ -36,6 +37,11 @@ const News = () => {
   //   console.log(e)
   //   const {value} = e.target
   // }
+  
+  if (!news) {
+    return null
+  }
+
   return (
     <div>
       <h3 className="user-component-title">Headlines Around the World</h3>
