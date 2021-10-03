@@ -14,7 +14,7 @@ const Settings = ({ user, setUser }) => {
     joke: false,
     news: false,
     quote: false,
-    weather: true,
+    weather: false,
   });
 
   useEffect(() => {
