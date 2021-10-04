@@ -14,6 +14,10 @@ const Quote = () => {
     fetchQuote()
   },[])
   
+  if (!quote) {
+    return null
+  }
+
 
   return (
     <div>
