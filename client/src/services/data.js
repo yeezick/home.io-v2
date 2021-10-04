@@ -92,7 +92,7 @@ export const getQuote = async () => {
 export const getWeather = async (lat, lon) => {
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherKey}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=imperial`
     );
       return response
   } catch (error) {}

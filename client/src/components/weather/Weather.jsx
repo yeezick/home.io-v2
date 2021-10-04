@@ -4,21 +4,26 @@ import "./Weather.css";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState();
-  const [lat, setLat] = useState(0);
-  const [long, setLong] = useState(0);
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     const getWeatherData = async () => {
-      await navigator.geolocation.getCurrentPosition((position) => {
-        setLong(position.coords.longitude);
-        setLat(position.coords.latitude);
-      });
-      const data = await getWeather(lat, long);
-      const { current, hourly, minutely } = data.data;
-      setWeatherData({
-        current: current,
-        hourly: hourly,
-        minutely: minutely,
+      await navigator.geolocation.getCurrentPosition(async (position) => {
+        const long = position.coords.longitude;
+        const lat = position.coords.latitude;
+
+        const data = await getWeather(lat, long);
+        const { current, hourly, minutely, timezone_offset } = data.data;
+
+        const today = new Date().toDateString();
+
+        setDate(today);
+        setWeatherData({
+          timezone_offset,
+          current: current,
+          hourly: hourly,
+          minutely: minutely,
+        });
       });
     };
     getWeatherData();
@@ -26,34 +31,39 @@ const Weather = () => {
   if (!weatherData) {
     return <h2> loading....</h2>;
   }
-  console.log(weatherData);
-  // for current
   const { current, hourly, minutely } = weatherData;
+
+  const readableTime = (ms) => {
+    return new Date(ms * 1000).toLocaleTimeString()
+  }
 
   return (
     <div>
       {/* current */}
+      <h3 className="user-component-title"> Weather</h3>
+
       <div className="weather-daily">
-        <p>Desc: {current.weather[0].description}</p>
-        <p>Temp: {current.temp} </p>
-        <p>Feels like: {current.feels_like}</p>
-        <p>humidity: {current.humidity}</p>
-        <p>Sunrise: {current.sunrise} </p>
-        <p>Sunset: {current.sunset}</p>
+        <p className="weather-title">{date}s</p>
+        <p className="weather-desc">Desc: {current.weather[0].description}</p>
+        <p className="weather-temp">Temp: {current.temp} </p>
+        <p className="weather-feels">Feels like: {current.feels_like}</p>
+        <p className="weather-humidity">Humidity: {current.humidity} %</p>
+        <p className="weather-sunrise">Sunrise: {readableTime(current.sunrise)} </p>
+        <p className="weather-sunset">Sunset: {readableTime(current.sunset)}</p>
       </div>
 
       {/* hourly 
       - needs to be broken down further by mappign through each hour
       */}
-      <div className="weather-hourly">
+      {/* <div className="weather-hourly">
     <p>Chance of rain: {hourly[0].pop}</p>
     <p>Temp: {hourly[0].temp}</p>
-      </div>
+      </div> */}
 
       {/* minutely */}
-      <div className="weather-minutely">
+      {/* <div className="weather-minutely">
       <p>Chance of rain: {minutely[0].precipitation}</p>
-      </div>
+      </div> */}
     </div>
   );
 };

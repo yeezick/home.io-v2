@@ -137,7 +137,7 @@ const Settings = ({ user, setUser }) => {
             />
             <label className="checklist-label" htmlFor="joke"><b>Joke</b> - don't worry, they're SFW.</label>
           </div>
-
+{/* 
           <div className="checklist-item">
             <input
             className="checklist-input"
@@ -150,8 +150,8 @@ const Settings = ({ user, setUser }) => {
             <label className="checklist-label" htmlFor="news">
               <b>News</b> - headlines from around the world!
             </label>
-          </div>
-
+          </div> */}
+{/* 
           <div className="checklist-item">
             <input
             className="checklist-input"
@@ -165,7 +165,7 @@ const Settings = ({ user, setUser }) => {
               <b>Quote</b> - sometimes it's a pick-me-up, sometimes it's an incentive
               to get introspective.
             </label>
-          </div>
+          </div> */}
 
           {/* <input
           type="checkbox"
