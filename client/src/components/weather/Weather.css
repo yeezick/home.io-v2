@@ -1,10 +1,46 @@
 .weather {
-  padding: 1rem;
-  background-color: #FFF8E7;
   border-radius: 4px;
+  background-color: #FFF8E7;
   color: #16263E;
+  padding: 1rem;
+}
+.weather-daily {
+  display: grid;
+  grid-template-areas:
+  "title title"
+  "desc desc "
+  "temp humidity"
+  "rise set";
+  font-weight: 700;
+}
+.weather-daily span {
+  display: block;
+  font-weight: 400;
 }
 .weather-title {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  grid-area: title;
+  text-align: center;
+  text-decoration: underline;
+}
+.weather-desc {
+  grid-area: desc;
+  font-style: bold;
+  margin: 0 auto;
+}
+.weather-temp {
+  grid-area: temp;
+}
+.weather-feels {
+  grid-area: feels;
+}
+.weather-humidity {
+  grid-area: humidity;
+}
+.weather-sunrise {
+  grid-area: rise;
+}
+.weather-sunset {
+  grid-area: set
 }

@@ -60,6 +60,10 @@ const Weather = () => {
     return splitDate.join(" ");
   };
 
+  const prettifyDesc = (currDesc) => {
+    return currDesc[0].toUpperCase() + currDesc.slice(1)
+  }
+
   return (
     <div>
       {/* current */}
@@ -67,15 +71,14 @@ const Weather = () => {
       <div className="weather">
         <div className="weather-daily">
           <p className="weather-title">{prettifyDate(date)}</p>
-          <p className="weather-desc">Desc: {current.weather[0].description}</p>
-          <p className="weather-temp">Temp: {current.temp} </p>
-          <p className="weather-feels">Feels like: {current.feels_like}</p>
-          <p className="weather-humidity">Humidity: {current.humidity} %</p>
+          <p className="weather-desc">{prettifyDesc(current.weather[0].description)}</p>
+          <p className="weather-temp">Temperature: <br/> <span className="weather-data">{current.temp}</span></p>
+          <p className="weather-humidity">Humidity:<span className="weather-data">{current.humidity}%</span></p>
           <p className="weather-sunrise">
-            Sunrise: {readableTime(current.sunrise)}{" "}
+            Sunrise:<span className="weather-data">{readableTime(current.sunrise)}</span> 
           </p>
           <p className="weather-sunset">
-            Sunset: {readableTime(current.sunset)}
+            Sunset: <span className="weather-data">{readableTime(current.sunset)}</span>
           </p>
         </div>
 
