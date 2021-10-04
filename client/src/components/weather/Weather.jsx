@@ -28,42 +28,70 @@ const Weather = () => {
     };
     getWeatherData();
   }, []);
+
   if (!weatherData) {
     return <h2> loading....</h2>;
   }
+
   const { current, hourly, minutely } = weatherData;
 
   const readableTime = (ms) => {
-    return new Date(ms * 1000).toLocaleTimeString()
-  }
+    return new Date(ms * 1000).toLocaleTimeString();
+  };
+
+  const prettifyDate = (currDate) => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    
+    const currDayNum = new Date().getDay();
+
+    const splitDate = currDate.split(" ");
+    splitDate[0] = days[currDayNum] + ",";
+    splitDate[1] += ".";
+    splitDate[2] += ",";
+    return splitDate.join(" ");
+  };
 
   return (
     <div>
       {/* current */}
       <h3 className="user-component-title"> Weather</h3>
+      <div className="weather">
+        <div className="weather-daily">
+          <p className="weather-title">{prettifyDate(date)}</p>
+          <p className="weather-desc">Desc: {current.weather[0].description}</p>
+          <p className="weather-temp">Temp: {current.temp} </p>
+          <p className="weather-feels">Feels like: {current.feels_like}</p>
+          <p className="weather-humidity">Humidity: {current.humidity} %</p>
+          <p className="weather-sunrise">
+            Sunrise: {readableTime(current.sunrise)}{" "}
+          </p>
+          <p className="weather-sunset">
+            Sunset: {readableTime(current.sunset)}
+          </p>
+        </div>
 
-      <div className="weather-daily">
-        <p className="weather-title">{date}s</p>
-        <p className="weather-desc">Desc: {current.weather[0].description}</p>
-        <p className="weather-temp">Temp: {current.temp} </p>
-        <p className="weather-feels">Feels like: {current.feels_like}</p>
-        <p className="weather-humidity">Humidity: {current.humidity} %</p>
-        <p className="weather-sunrise">Sunrise: {readableTime(current.sunrise)} </p>
-        <p className="weather-sunset">Sunset: {readableTime(current.sunset)}</p>
-      </div>
-
-      {/* hourly 
+        {/* hourly 
       - needs to be broken down further by mappign through each hour
       */}
-      {/* <div className="weather-hourly">
+        {/* <div className="weather-hourly">
     <p>Chance of rain: {hourly[0].pop}</p>
     <p>Temp: {hourly[0].temp}</p>
-      </div> */}
+  </div> */}
 
-      {/* minutely */}
-      {/* <div className="weather-minutely">
+        {/* minutely */}
+        {/* <div className="weather-minutely">
       <p>Chance of rain: {minutely[0].precipitation}</p>
-      </div> */}
+    </div> */}
+      </div>
     </div>
   );
 };
