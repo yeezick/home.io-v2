@@ -18,17 +18,18 @@ const Landing = () => {
       <section className="description">
         <h2 className="description-title">Welcome Home</h2>
         <div className="description-info">
-          <Weather />
           <p className="description-info-text">
             It’s in our interest to give you only the things you want. That’s
             why we only display data You think is relevant from our broad list
             of public API’s including:
           </p>
           <ul className="description-list">
-            <li>Recipes</li>
+            <li>Recipes for food</li>
             <li>NASA's picture of the day</li>
             <li>Top 10 CryptoCurrency</li>
+            <li>& even the weather!</li>
           </ul>
+          <Weather />
         </div>
         <div className="description-incentive">
           <p>

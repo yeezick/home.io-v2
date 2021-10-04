@@ -30,7 +30,7 @@ const Weather = () => {
   }, []);
 
   if (!weatherData) {
-    return <h2> loading....</h2>;
+    return null;
   }
 
   const { current, hourly, minutely } = weatherData;
@@ -67,7 +67,7 @@ const Weather = () => {
   return (
     <div>
       {/* current */}
-      <h3 className="user-component-title"> Weather</h3>
+      <h3 className="user-component-title"> Today's Forecast</h3>
       <div className="weather">
         <div className="weather-daily">
           <p className="weather-title">{prettifyDate(date)}</p>

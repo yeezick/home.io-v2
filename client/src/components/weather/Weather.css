@@ -1,16 +1,16 @@
 .weather {
   border-radius: 4px;
-  background-color: #FFF8E7;
-  color: #16263E;
+  background-color: #fff8e7;
+  color: #16263e;
   padding: 1rem;
 }
 .weather-daily {
   display: grid;
   grid-template-areas:
-  "title title"
-  "desc desc "
-  "temp humidity"
-  "rise set";
+    "title title"
+    "desc desc "
+    "temp humidity"
+    "rise set";
   font-weight: 700;
 }
 .weather-daily span {
@@ -42,5 +42,17 @@
   grid-area: rise;
 }
 .weather-sunset {
-  grid-area: set
+  grid-area: set;
+}
+
+@media screen and (min-width: 800px) {
+  .weather-daily {
+    grid-template-areas:
+      "title desc"
+      "temp humidity"
+      "rise set";
+  }
+  .weather-title {
+    font-size: 2rem !important;
+  }
 }
